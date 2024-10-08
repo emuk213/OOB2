@@ -17,6 +17,18 @@ int main()
            b *= 10;
         }
     }
+    int n = 1000;
+    for (int i = 0; i < 5; i++) {
+
+        readStudTxt("studentai" + to_string(n) + ".txt", vec1);
+        cout << setw(15) << left << "Pavarde" << setw(15) << left << "Vardas " << setw(20) << setprecision(2) << fixed << right << "Galutinis balas vid." << setw(15) << right << "Kategorija" << endl;
+        for (Stud& temp : vec1) {
+            skaiciuotiGalutiniBala(temp);
+            outputVid(temp);
+        }
+
+    n *= 10;
+    }
     system("pause");
     
     return 0;
