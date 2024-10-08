@@ -22,6 +22,12 @@ double skaiciuotiNdMed(vector <int>& nd) {
 void skaiciuotiGalutiniBala(Stud& Lok) {
     Lok.galutinisVid = 0.4 * skaiciuotiNdVid(Lok.nd) + 0.6 * Lok.egz;
     Lok.galutinisMed = 0.4 * skaiciuotiNdMed(Lok.nd) + 0.6 * Lok.egz;
+     if (Lok.galutinisVid < 5 || Lok.galutinisMed < 5) {
+     Lok.kategorija = "beta";
+ }
+ else if (Lok.galutinisVid >= 5 || Lok.galutinisMed >= 5) {
+     Lok.kategorija = "sigma";
+ }
 }
 
 void input(Stud& Lok) {
@@ -139,15 +145,16 @@ void readStudTxt(const string& failoVardas, vector <Stud>& studentai) {
 
 
 void outputVid(Stud Lok) {
-    cout << setw(15) << left << Lok.pavarde << setw(15) << left << Lok.vardas << setw(5) << setprecision(2) << fixed << right << Lok.galutinisVid << endl;
+    cout << setw(15) << left << Lok.pavarde << setw(15) << left << Lok.vardas << setw(20) << setprecision(2) << fixed << right << Lok.galutinisVid << setw(15) << right << Lok.kategorija << endl;
 }
 void outputMed(Stud Lok) {
-    cout << setw(15) << left << Lok.pavarde << setw(15) << left << Lok.vardas << setw(5) << setprecision(2) << fixed << right << Lok.galutinisMed << endl;
+    cout << setw(15) << left << Lok.pavarde << setw(15) << left << Lok.vardas << setw(20) << setprecision(2) << fixed << right << Lok.galutinisMed << setw(15) << right << Lok.kategorija << endl;
 }
 
 void clean(Stud& Lok) {
     Lok.vardas.clear();
     Lok.pavarde.clear();
+    Lok.kategorija.clear();
     Lok.nd.clear();
 }
 
