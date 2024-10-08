@@ -3,7 +3,7 @@
 #include "MyLib2.h"
 
 struct Stud {
-	string vardas, pavarde;
+	string vardas, pavarde, kategorija;
 	vector <int> nd;
 	int egz;
 	double galutinisVid, galutinisMed;
