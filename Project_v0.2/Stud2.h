@@ -17,6 +17,7 @@ void skaiciuotiGalutiniBala(Stud& Lok);
 void outputVid(Stud Lok);
 void outputMed(Stud Lok);
 void clean(Stud& Lok);
+void kurti_faila(const string& failas, int eil);
 //void outputTxt(const vector <Stud>& studentai);
 
 #endif // STUD_H_INCLUDED
