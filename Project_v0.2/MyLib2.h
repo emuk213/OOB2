@@ -14,6 +14,9 @@
 #include <stdexcept>
 #include <exception>
 
+#include <ctime>
+#include <chrono>
+
 using std::endl;
 using std::cout;
 using std::cin;
@@ -33,6 +36,8 @@ using std::runtime_error;
 using std::istringstream;
 using std::cerr;
 using std::exception;
+using std::ofstream;
+using std::to_string;
 
 
 #endif // MYLIB_H_INCLUDED
