@@ -22,14 +22,17 @@ double skaiciuotiNdMed(vector <int>& nd) {
 void skaiciuotiGalutiniBala(Stud& Lok) {
     Lok.galutinisVid = 0.4 * skaiciuotiNdVid(Lok.nd) + 0.6 * Lok.egz;
     Lok.galutinisMed = 0.4 * skaiciuotiNdMed(Lok.nd) + 0.6 * Lok.egz;
-     if (Lok.galutinisVid < 5 || Lok.galutinisMed < 5) {
-     Lok.kategorija = "beta";
- }
- else if (Lok.galutinisVid >= 5 || Lok.galutinisMed >= 5) {
-     Lok.kategorija = "sigma";
- }
 }
 
+void kategorijos(vector<Stud>& sigma, vector<Stud>& beta, Stud& Lok) {
+        if (Lok.galutinisVid < 5) {
+            beta.push_back(Lok);
+        }
+        else if (Lok.galutinisVid >= 5) {
+            sigma.push_back(Lok);
+        }
+        clean(Lok);
+}
 void input(Stud& Lok) {
     cout << "Input Name, Surname:" << endl;
     cin >> Lok.vardas >> Lok.pavarde;
@@ -75,16 +78,6 @@ void input(Stud& Lok) {
                 Lok.nd.push_back(1 + (rand() % 10));
             }
             Lok.egz = 1 + (rand() % 10);
-            /*
-            //isveda random nd vec:
-            for (int i = 0; i < Lok.nd.size(); ++i) {
-               cout << Lok.nd[i] << " ";
-            }
-            cout << endl;
-            //isveda random egzamino rezultata:
-            cout << Lok.egz << endl;
-            */
-
         }
     }
     catch (exception& e) {
@@ -145,43 +138,14 @@ void readStudTxt(const string& failoVardas, vector <Stud>& studentai) {
 
 
 void outputVid(Stud Lok) {
-    cout << setw(15) << left << Lok.pavarde << setw(15) << left << Lok.vardas << setw(20) << setprecision(2) << fixed << right << Lok.galutinisVid << setw(15) << right << Lok.kategorija << endl;
+    cout << setw(15) << left << Lok.pavarde << setw(15) << left << Lok.vardas << setw(5) << setprecision(2) << fixed << right << Lok.galutinisVid << endl;
 }
 void outputMed(Stud Lok) {
-    cout << setw(15) << left << Lok.pavarde << setw(15) << left << Lok.vardas << setw(20) << setprecision(2) << fixed << right << Lok.galutinisMed << setw(15) << right << Lok.kategorija << endl;
+    cout << setw(15) << left << Lok.pavarde << setw(15) << left << Lok.vardas << setw(5) << setprecision(2) << fixed << right << Lok.galutinisMed << endl;
 }
 
 void clean(Stud& Lok) {
     Lok.vardas.clear();
     Lok.pavarde.clear();
-    Lok.kategorija.clear();
     Lok.nd.clear();
 }
-
-/*
-void outputTxt(const vector<Stud>& studentai) {
-
-    cout << setw(15) << left << "Pavarde"
-        << setw(15) << left << "Vardas"
-        << setw(30) << left << "Namu darbai"
-        << setw(10) << left << "Egzaminas" << endl;
-
-    cout << string(70, '-') << endl;
-
-    for (const auto& student : studentai) {
-
-        cout << setw(15) << left << student.pavarde
-            << setw(15) << left << student.vardas;
-
-
-        for (size_t i = 0; i < student.nd.size(); ++i) {
-            cout << student.nd[i];
-            if (i < student.nd.size() - 1) {
-                cout << " ";
-            }
-        }
-
-        cout << setw(10) << right << student.egz << endl;
-    }
-}
-*/
