@@ -3,7 +3,7 @@
 #include "MyLib2.h"
 
 struct Stud {
-	string vardas, pavarde, kategorija;
+	string vardas, pavarde;
 	vector <int> nd;
 	int egz;
 	double galutinisVid, galutinisMed;
@@ -18,6 +18,8 @@ void outputVid(Stud Lok);
 void outputMed(Stud Lok);
 void clean(Stud& Lok);
 void kurti_faila(const string& failas, int eil);
+void isvedimas(vector <Stud> vec, const string& failoPav);
+void kategorijos(vector<Stud>& sigma, vector<Stud>& beta, Stud& Lok);
 //void outputTxt(const vector <Stud>& studentai);
 
 #endif // STUD_H_INCLUDED
