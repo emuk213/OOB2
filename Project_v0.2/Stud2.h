@@ -20,7 +20,10 @@ void clean(Stud& Lok);
 void kurti_faila(const string& failas, int eil);
 void isvedimas(vector <Stud> vec, const string& failoPav);
 void kategorijos(vector<Stud>& sigma, vector<Stud>& beta, Stud& Lok);
-//void outputTxt(const vector <Stud>& studentai);
+bool lygintiVardas(Stud& a, Stud& b);
+bool lygintiPavarde(Stud& a, Stud& b);
+bool lygintiGalutinis(Stud& a, Stud& b);
+void sortByChoice(vector<Stud>& vec, int b);
 
 #endif // STUD_H_INCLUDED
 
