@@ -13,6 +13,7 @@
 #include <cstdlib> //(del rand, exit())
 #include <stdexcept>
 #include <exception>
+#include <random>
 
 #include <ctime>
 #include <chrono>
