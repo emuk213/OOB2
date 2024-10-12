@@ -33,6 +33,26 @@ void kategorijos(vector<Stud>& sigma, vector<Stud>& beta, Stud& Lok) {
         }
         clean(Lok);
 }
+bool lygintiVardas(Stud& a, Stud& b) {
+            return a.vardas < b.vardas;
+}
+bool lygintiPavarde(Stud& a, Stud& b) {
+    return a.pavarde < b.pavarde;
+}
+bool lygintiGalutinis(Stud& a, Stud& b) {
+    return a.galutinisVid < b.galutinisVid;
+}
+void sortByChoice(vector<Stud>& vec, int b) {
+    if (b == 0) {
+        sort(vec.begin(), vec.end(), lygintiVardas);
+    }
+    else if (b == 1) {
+        sort(vec.begin(), vec.end(), lygintiPavarde);
+    }
+    else if (b == 2) {
+        sort(vec.begin(), vec.end(), lygintiGalutinis);
+    }
+}
 void input(Stud& Lok) {
     cout << "Input Name, Surname:" << endl;
     cin >> Lok.vardas >> Lok.pavarde;
