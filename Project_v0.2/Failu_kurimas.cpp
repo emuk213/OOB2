@@ -2,9 +2,10 @@
 #include "MyLib2.h"
 #include "Stud2.h"
 #include "RandInt.h"
+#include "Timer.h"
 
 void kurti_faila(const string& failas, int eil) {
-    auto start0 = std::chrono::high_resolution_clock::now();
+    Timer t0;
     ofstream studentai(failas);
     
     srand(time(0));
@@ -15,10 +16,11 @@ void kurti_faila(const string& failas, int eil) {
 
     constexpr int max = 10;
     RandInt rnd{ 1, max };
+
     for (int i = 1; i <= eil; i++) {
         vector <int> nd(9);
         for (int j = 0; j < 9; j++) {
-             nd[j] = rnd();
+            nd[j] = rnd();
         }
 
         studentai << setw(15) << left << ("Vardas" + to_string(i)) << setw(15) << left << ("Pavarde" + to_string(i));
@@ -28,9 +30,8 @@ void kurti_faila(const string& failas, int eil) {
 
     studentai.close();
     cout << "Failas " << failas << " uzdarytas" << endl;
-    auto end0 = std::chrono::high_resolution_clock::now();
-    std::chrono::duration<double> duration0 = end0 - start0;
-    cout << "Failo generavimas uztruko: " << duration0.count() << endl;
+    double e0 = t0.elapsed();
+    cout << "Failo generavimas uztruko: " << e0 << "s\n";
 }
 
 void isvedimas(vector <Stud> vec, const string& failoPav) {
@@ -42,4 +43,5 @@ void isvedimas(vector <Stud> vec, const string& failoPav) {
     }
 
     failas.close();
+
 }
