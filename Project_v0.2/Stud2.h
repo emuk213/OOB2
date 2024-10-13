@@ -18,7 +18,7 @@ void outputVid(Stud Lok);
 void outputMed(Stud Lok);
 void clean(Stud& Lok);
 void kurti_faila(const string& failas, int eil);
-void isvedimas(vector <Stud> vec, const string& failoPav);
+void isvedimas(vector <Stud>& vec, const string& failoPav);
 void kategorijos(vector<Stud>& sigma, vector<Stud>& beta, Stud& Lok);
 bool lygintiVardas(Stud& a, Stud& b);
 bool lygintiPavarde(Stud& a, Stud& b);
