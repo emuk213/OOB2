@@ -10,7 +10,7 @@ struct Stud {
 };
 
 void input(Stud& Lok);
-void readStudTxt(const string& failoVardas, vector <Stud>& studentai);
+void readStudTxt(const string& failoVardas, vector<Stud>& studentai);
 double skaiciuotiNdVid(const vector <int>& nd);
 double skaiciuotiNdMed(vector <int>& nd);
 void skaiciuotiGalutiniBala(Stud& Lok);
