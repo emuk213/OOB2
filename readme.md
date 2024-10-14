@@ -22,13 +22,15 @@ Buvo atlikti 8 testai.
 * 1 000 įrašų:
   | Funkcija   | Vidutinis laikas (s)   |
   |:-----------|:----------:|
-  | Failo nuskaitymas       |    | 
-  | Rūšiavimas        |      | 
-  | Dalinimas į 2 grupes     | |
-  | "Sigma" išvedimas |    |
-  |"Beta" išvedimas |  |
+  | Failo nuskaitymas       |   0.007049 | 
+  | Rūšiavimas        |   0.000362   | 
+  | Dalinimas į 2 grupes     | 0.000218|
+  | "Sigma" išvedimas |  0.004299  |
+  |"Beta" išvedimas | 0.001367 |
+  |Viso testo trukmė| 0.013487|
 
-  * 10 000 įrašų:
+
+* 10 000 įrašų:
   | Funkcija   | Vidutinis laikas (s)   |
   |:-----------|:----------:|
   | Failo nuskaitymas       |    | 
@@ -36,6 +38,8 @@ Buvo atlikti 8 testai.
   | Dalinimas į 2 grupes     | |
   | "Sigma" išvedimas |    |
   |"Beta" išvedimas |  |
+  |Viso testo trukmė| |
+
 
 * 100 000 įrašų:
   | Funkcija   | Vidutinis laikas (s)   |
@@ -45,8 +49,10 @@ Buvo atlikti 8 testai.
   | Dalinimas į 2 grupes     | |
   | "Sigma" išvedimas |    |
   |"Beta" išvedimas |  |
+  |Viso testo trukmė| |
 
-  * 1 000 000 įrašų:
+
+* 1 000 000 įrašų:
   | Funkcija   | Vidutinis laikas (s)   |
   |:-----------|:----------:|
   | Failo nuskaitymas       |    | 
@@ -54,6 +60,8 @@ Buvo atlikti 8 testai.
   | Dalinimas į 2 grupes     | |
   | "Sigma" išvedimas |    |
   |"Beta" išvedimas |  |
+  |Viso testo trukmė| |
+
 
 * 10 000 000 įrašų:
   | Funkcija   | Vidutinis laikas (s)   |
@@ -63,3 +71,4 @@ Buvo atlikti 8 testai.
   | Dalinimas į 2 grupes     | |
   | "Sigma" išvedimas |    |
   |"Beta" išvedimas |  |
+  |Viso testo trukmė| |
