@@ -55,12 +55,12 @@ Buvo atlikti 8 testai.
 * 1 000 000 įrašų:
   | Funkcija   | Vidutinis laikas (s)   |
   |:-----------|:----------:|
-  | Failo nuskaitymas       |    | 
-  | Rūšiavimas        |      | 
-  | Dalinimas į 2 grupes     | |
-  | "Sigma" išvedimas |    |
-  |"Beta" išvedimas |  |
-  |Viso testo trukmė| |
+  | Failo nuskaitymas       |  5.833982  | 
+  | Rūšiavimas        |  0.528940    | 
+  | Dalinimas į 2 grupes     | 0.290187|
+  | "Sigma" išvedimas |  0.861029  |
+  |"Beta" išvedimas | 0.626815 |
+  |Viso testo trukmė| 8.140956|
 
 
 * 10 000 000 įrašų:
