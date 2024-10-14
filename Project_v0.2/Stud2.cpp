@@ -53,6 +53,8 @@ void sortByChoice(vector<Stud>& vec, int b) {
         sort(vec.begin(), vec.end(), lygintiGalutinis);
     }
 }
+ 
+
 void input(Stud& Lok) {
     cout << "Input Name, Surname:" << endl;
     cin >> Lok.vardas >> Lok.pavarde;
@@ -107,12 +109,13 @@ void input(Stud& Lok) {
 }
 
 
-void readStudTxt(const string& failoVardas, vector <Stud>& studentai) {
+void readStudTxt(const string& failoVardas, vector<Stud>& studentai) {
     ifstream inFile(failoVardas); //atidarome faila nuskaitymui
     try {
         if (!inFile.is_open()) {
             throw runtime_error("Error: unable to open file: " + failoVardas);
         }
+        studentai.reserve(10000000);
         string line;
         getline(inFile, line);
         while (getline(inFile, line)) {
@@ -122,15 +125,16 @@ void readStudTxt(const string& failoVardas, vector <Stud>& studentai) {
             string x;
 
             iss >> Lok1.vardas >> Lok1.pavarde;
-
+            
             Lok1.nd.clear();
             while (iss >> x) {
 
                 score = std::stoi(x);
-
+                
                 Lok1.nd.push_back(score);
 
             }
+            
             for (int i = 0; i < Lok1.nd.size(); i++) {
                 if ((Lok1.nd.at(i) < 1 || Lok1.nd.at(i) > 10)) {
                     throw runtime_error("Error: ND score must be between 1 and 10");
@@ -140,12 +144,15 @@ void readStudTxt(const string& failoVardas, vector <Stud>& studentai) {
                 throw runtime_error("Error: no ND scores found in line: " + line);
             }
 
-            Lok1.egz = Lok1.nd.back();
+            Lok1.egz = Lok1.nd.back(); pakeiciau:
+           
             Lok1.nd.pop_back();
+            
 
-            studentai.push_back(Lok1);
-
+           studentai.push_back(Lok1);
         }
+        inFile.close();
+        
     }
     catch (const std::invalid_argument& e) {
         throw runtime_error("Error: ND score is a letter");
@@ -155,7 +162,6 @@ void readStudTxt(const string& failoVardas, vector <Stud>& studentai) {
         exit(EXIT_FAILURE);
     }
 }
-
 
 void outputVid(Stud Lok) {
     cout << setw(15) << left << Lok.pavarde << setw(15) << left << Lok.vardas << setw(5) << setprecision(2) << fixed << right << Lok.galutinisVid << endl;
