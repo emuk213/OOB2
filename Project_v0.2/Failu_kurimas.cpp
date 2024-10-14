@@ -12,7 +12,7 @@ void kurti_faila(const string& failas, int eil) {
  
     studentai << setw(15) << left << "Vardas" << setw(15) << left << "Pavarde";
     for (int i = 1; i <= 9; i++) studentai << setw(10) << right << "ND" + to_string(i);
-    studentai << setw(10) << right << "Egz." << endl;
+    studentai << setw(10) << right << "Egz." << "\n";
 
     constexpr int max = 10;
     RandInt rnd{ 1, max };
@@ -25,7 +25,7 @@ void kurti_faila(const string& failas, int eil) {
 
         studentai << setw(15) << left << ("Vardas" + to_string(i)) << setw(15) << left << ("Pavarde" + to_string(i));
         for (const int& paz : nd) studentai << setw(10) << right << paz;
-        studentai << setw(10) << right << (rnd()) << endl;
+        studentai << setw(10) << right << (rnd()) << "\n";
     }
 
     studentai.close();
