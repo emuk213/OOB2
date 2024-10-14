@@ -146,7 +146,6 @@ int main()
             vec1.clear();
             double e2 = t2.elapsed();
             cout << to_string(n) + " irasu dalinimas i 2 grupes uztruko: " << e2 << " s\n";
-
             Timer t3;
             isvedimas(sigma, "sigma" + to_string(n) + ".txt");
             double e3 = t3.elapsed();
@@ -163,7 +162,12 @@ int main()
             n *= 10;
         }
     }
+
+       
+
     system("pause");
     
+   
+
     return 0;
 }
