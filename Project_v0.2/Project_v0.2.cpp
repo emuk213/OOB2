@@ -26,7 +26,7 @@ int main()
             if (cin.fail() || (b != 0 && b != 1)) {
                 throw runtime_error("Error: wrong input");
             }
-            
+
             if (b == 1) {
                 cout << "Input file name" << endl;
                 cin >> failoVardas;
@@ -60,6 +60,7 @@ int main()
                     }
                 }
             }
+
             else if (b == 0) {
                 cout << "How many students do you have?" << endl;
 
@@ -110,7 +111,7 @@ int main()
 
             for (int i = 0; i < 5; i++) {
 
-                kurti_faila("studentai" + to_string(b) + ".txt", b);
+                kurti_faila("studentai" + to_string(d) + ".txt", d);
                 d *= 10;
             }
 
@@ -145,7 +146,7 @@ int main()
             vec1.clear();
             double e2 = t2.elapsed();
             cout << to_string(n) + " irasu dalinimas i 2 grupes uztruko: " << e2 << " s\n";
-            
+
             Timer t3;
             isvedimas(sigma, "sigma" + to_string(n) + ".txt");
             double e3 = t3.elapsed();
@@ -163,6 +164,6 @@ int main()
         }
     }
     system("pause");
-
+    
     return 0;
 }
