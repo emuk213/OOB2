@@ -24,14 +24,16 @@ void skaiciuotiGalutiniBala(Stud& Lok) {
     Lok.galutinisMed = 0.4 * skaiciuotiNdMed(Lok.nd) + 0.6 * Lok.egz;
 }
 
-void kategorijos(vector<Stud>& sigma, vector<Stud>& beta, Stud& Lok) {
-    if (Lok.galutinisVid < 5) {
-        beta.push_back(Lok);
+void kategorijos(list<Stud>& list1, list<Stud>& sigma, list<Stud>& beta) {
+    for(const Stud& student:list1){
+        if (student.galutinisVid < 5) {
+            beta.push_back(student);
+        }
+        else if (student.galutinisVid >= 5) {
+            sigma.push_back(student);
+        }
     }
-    else if (Lok.galutinisVid >= 5) {
-        sigma.push_back(Lok);
-    }
-    clean(Lok);
+    list1.clear();
 }
 bool lygintiVardas(Stud& a, Stud& b) {
     return a.vardas < b.vardas;
