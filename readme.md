@@ -1,19 +1,16 @@
-1. Project_v0.2.cpp yra main failas,
-2. MyLib.h faile aprašytos bibliotekos,
-3. Stud.cpp faile surašytos visos funkcijos,
-4. Stud.h faile aprašyta struktūra ir funkcijų deklaracijos.
+1. Project_v0.3.cpp yra main failas,
+2. MyLib3.h faile aprašytos bibliotekos,
+3. Stud3.cpp faile surašytos visos funkcijos,
+4. Stud3.h faile aprašyta struktūra ir funkcijų deklaracijos.
 5. Failu_kurimas.cpp faile yra failų generavimo ir duomenų išvedimo į failus funkcijos.
 6. RandInt.h aprašoma atsitiktinių skaičių generavimo klasė.
 7. Timer.h laiko skaičiavimo klasė.
 
    **Kas naujo?**
 
-   Programa leidžia:
-* pasirinkti ar vartotjas nori generuoti naujus 5 failus (1000, 10000, 1000000, 10000000 įrašų)
-* pasirinkti pagal ką būtų rūšiuojami išvedimo duomenys (vardą, pavardę ar galutinį balą)
-* apskaičiuoti failų generavimo laiką
-* apskaičiuoti failų rūčiavimo, nuskaitymo ir išvedimo laiką
-* padalinti studentus į dvi grupes pagal galutinį balą ("sigma" - galutinis balas >= 5, "beta" - galutinis balas < 5).
+   * Programa parašyta taip, kad vietoje vector naudotų list konteinerį informacijai apie studentus saugoti.
+   * Duomenis įvedus ranka, šalia studentų duomenų yra išvedamas ir to studento saugojimo atmintyje adresas.
+   * Atliekami programos greičio testai, jų vidurkiai lyginami su v0.2 versijos rezultatais (t.y. programa naudoja vector konteinerį).
 
   **CPU: 12th Gen Intel(R) Core(TM) i7-1260P   2.10 GHz**
   
