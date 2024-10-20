@@ -111,13 +111,12 @@ void input(Stud& Lok) {
 }
 
 
-void readStudTxt(const string& failoVardas, vector<Stud>& studentai) {
+void readStudTxt(const string& failoVardas, list<Stud>& studentai) {
     ifstream inFile(failoVardas); //atidarome faila nuskaitymui
     try {
         if (!inFile.is_open()) {
             throw runtime_error("Error: unable to open file: " + failoVardas);
         }
-        studentai.reserve(10000000);
         string line;
         getline(inFile, line);
         while (getline(inFile, line)) {
@@ -147,10 +146,7 @@ void readStudTxt(const string& failoVardas, vector<Stud>& studentai) {
             }
 
             Lok1.egz = Lok1.nd.back();
-
             Lok1.nd.pop_back();
-
-
             studentai.push_back(Lok1);
         }
         inFile.close();
