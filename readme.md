@@ -15,6 +15,12 @@
 * apskaičiuoti failų rūčiavimo, nuskaitymo ir išvedimo laiką
 * padalinti studentus į dvi grupes pagal galutinį balą ("sigma" - galutinis balas >= 5, "beta" - galutinis balas < 5).
 
+  **CPU: 12th Gen Intel(R) Core(TM) i7-1260P   2.10 GHz**
+  
+  **RAM: 16 GB**
+  
+  **SSD (1TB)**
+
 Testų vidurkiai:
 
 Buvo atlikti 8 testai.
