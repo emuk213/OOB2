@@ -1,5 +1,5 @@
 #pragma once
-#include "MyLib3.h"
+
 class Timer {
 private:
     std::chrono::time_point<std::chrono::high_resolution_clock> start;
