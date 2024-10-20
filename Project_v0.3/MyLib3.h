@@ -13,11 +13,10 @@
 #include <cstdlib> //(del rand, exit())
 #include <stdexcept>
 #include <exception>
-
 #include <random>
-
 #include <ctime>
 #include <chrono>
+#include <list>
 
 using std::endl;
 using std::cout;
@@ -40,6 +39,7 @@ using std::cerr;
 using std::exception;
 using std::ofstream;
 using std::to_string;
+using std::list;
 
 
 #endif // MYLIB_H_INCLUDED
