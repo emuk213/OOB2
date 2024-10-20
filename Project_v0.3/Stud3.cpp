@@ -1,4 +1,5 @@
 #include "Stud3.h"
+#include "RandInt.h"
 
 
 double skaiciuotiNdVid(const vector <int>& nd) {
@@ -58,6 +59,8 @@ void sortByChoice(list<Stud>& vec, int b) {
 
 
 void input(Stud& Lok) {
+    constexpr int max = 10;
+    RandInt rnd{ 1, max };
     cout << "Input Name, Surname:" << endl;
     cin >> Lok.vardas >> Lok.pavarde;
 
@@ -99,9 +102,9 @@ void input(Stud& Lok) {
             }
 
             for (int i = 0; i < ndSk; i++) {
-                Lok.nd.push_back(1 + (rand() % 10));
+                Lok.nd.push_back(rnd());
             }
-            Lok.egz = 1 + (rand() % 10);
+            Lok.egz = rnd();
         }
     }
     catch (exception& e) {
