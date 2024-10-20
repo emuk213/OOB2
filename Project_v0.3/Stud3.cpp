@@ -44,15 +44,15 @@ bool lygintiPavarde(Stud& a, Stud& b) {
 bool lygintiGalutinis(Stud& a, Stud& b) {
     return a.galutinisVid < b.galutinisVid;
 }
-void sortByChoice(vector<Stud>& vec, int b) {
+void sortByChoice(list<Stud>& vec, int b) {
     if (b == 0) {
-        sort(vec.begin(), vec.end(), lygintiVardas);
+        vec.sort(lygintiVardas);
     }
     else if (b == 1) {
-        sort(vec.begin(), vec.end(), lygintiPavarde);
+        vec.sort(lygintiPavarde);
     }
     else if (b == 2) {
-        sort(vec.begin(), vec.end(), lygintiGalutinis);
+        vec.sort(lygintiGalutinis);
     }
 }
 
