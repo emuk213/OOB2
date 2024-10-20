@@ -162,11 +162,19 @@ void readStudTxt(const string& failoVardas, list<Stud>& studentai) {
 }
 
 
-void outputVid(Stud Lok) {
-    cout << setw(15) << left << Lok.pavarde << setw(15) << left << Lok.vardas << setw(5) << setprecision(2) << fixed << right << Lok.galutinisVid << endl;
-}
-void outputMed(Stud Lok) {
-    cout << setw(15) << left << Lok.pavarde << setw(15) << left << Lok.vardas << setw(5) << setprecision(2) << fixed << right << Lok.galutinisMed << endl;
+void output(const list <Stud>& list1, int a) {
+    if (a == 0) {
+        cout << setw(15) << left << "Name" << setw(15) << left << "Surname" << setw(30) << left << "Final average score (vid.)" << setw(15) << right << "Adress" << endl;
+        for (const Stud& student : list1) {
+            cout << setw(15) << left << student.vardas << setw(15) << left << student.pavarde << setw(30) << setprecision(2) << fixed << left << student.galutinisVid << setw(15) << left << &student << endl;
+        }
+    }
+    else if (a == 1) {
+        cout << setw(15) << left << "Name" << setw(15) << left << "Surname" << setw(30) << left << "Final average score (med.)" << setw(15) << right << "Adress" << endl;
+        for (const Stud& student : list1) {
+            cout << setw(15) << left << student.vardas << setw(15) << left << student.pavarde << setw(30) << setprecision(2) << fixed << left << student.galutinisMed << setw(15) << left << &student << endl;
+        }
+    }
 }
 
 void clean(Stud& Lok) {
