@@ -34,7 +34,7 @@ void kurti_faila(const string& failas, int eil) {
     cout << "Failo generavimas uztruko: " << e0 << "s\n";
 }
 
-void isvedimas(vector <Stud>& vec, const string& failoPav) {
+void isvedimas(list <Stud>& vec, const string& failoPav) {
     ofstream failas(failoPav);
     failas << setw(15) << left << "Vardas" << setw(15) << left << "Pavarde" << setw(5) << right << "Galutinis balas vid." << "\n";
     failas.precision(2);
