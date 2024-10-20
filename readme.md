@@ -25,56 +25,58 @@ Testų vidurkiai:
 
 Buvo atlikti 8 testai.
 
+Lentelėse pateiktas vidutinis testų laikas sekundėmis naudojant vector ir list.
+
 * 1 000 įrašų:
-  | Funkcija   | Vidutinis laikas (s)   |
-  |:-----------|:----------:|
-  | Failo nuskaitymas       |   0.007049 | 
-  | Rūšiavimas        |   0.000362   | 
-  | Dalinimas į 2 grupes     | 0.000218|
-  | "Sigma" išvedimas |  0.004299  |
-  |"Beta" išvedimas | 0.001367 |
-  |Viso testo trukmė| 0.013487|
+  | Funkcija   | Vector  | List|
+  |:-----------|:----------:|:------------:|
+  | Failo nuskaitymas       |   0.007049 |   |
+  | Rūšiavimas        |   0.000362   |  |
+  | Dalinimas į 2 grupes     | 0.000218|  |
+  | "Sigma" išvedimas |  0.004299  | |
+  |"Beta" išvedimas | 0.001367 |  |
+  |Viso testo trukmė| 0.013487|  |
 
 
 * 10 000 įrašų:
-  | Funkcija   | Vidutinis laikas (s)   |
-  |:-----------|:----------:|
-  | Failo nuskaitymas       |  0.065592  | 
-  | Rūšiavimas        |     0.004222 | 
-  | Dalinimas į 2 grupes     |0.002387 |
-  | "Sigma" išvedimas |    0.012350|
-  |"Beta" išvedimas |  0.008186|
-  |Viso testo trukmė| 0.092739|
+ | Funkcija   | Vector  | List|
+  |:-----------|:----------:|:------------:|
+  | Failo nuskaitymas       |  0.065592  |  |
+  | Rūšiavimas        |     0.004222 |  |
+  | Dalinimas į 2 grupes     |0.002387 | |
+  | "Sigma" išvedimas |    0.012350| |
+  |"Beta" išvedimas |  0.008186| |
+  |Viso testo trukmė| 0.092739| |
 
 
 * 100 000 įrašų:
-  | Funkcija   | Vidutinis laikas (s)   |
-  |:-----------|:----------:|
-  | Failo nuskaitymas       | 0.588068   | 
-  | Rūšiavimas        |   0.045850   | 
-  | Dalinimas į 2 grupes     | 0.033737|
-  | "Sigma" išvedimas |    0.101996|
-  |"Beta" išvedimas | 0.070402 |
-  |Viso testo trukmė|0.840056 |
+  | Funkcija   | Vector  | List|
+  |:-----------|:----------:|:------------:|
+  | Failo nuskaitymas       | 0.588068   |   |
+  | Rūšiavimas        |   0.045850   |   |
+  | Dalinimas į 2 grupes     | 0.033737|  |
+  | "Sigma" išvedimas |    0.101996|  |
+  |"Beta" išvedimas | 0.070402 |  |
+  |Viso testo trukmė|0.840056 |  |
 
 
 * 1 000 000 įrašų:
-  | Funkcija   | Vidutinis laikas (s)   |
-  |:-----------|:----------:|
-  | Failo nuskaitymas       |  5.833982  | 
-  | Rūšiavimas        |  0.528940    | 
-  | Dalinimas į 2 grupes     | 0.290187|
-  | "Sigma" išvedimas |  0.861029  |
-  |"Beta" išvedimas | 0.626815 |
-  |Viso testo trukmė| 8.140956|
+ | Funkcija   | Vector  | List|
+  |:-----------|:----------:|:------------:|
+  | Failo nuskaitymas       |  5.833982  |  |
+  | Rūšiavimas        |  0.528940    |   |
+  | Dalinimas į 2 grupes     | 0.290187|  |
+  | "Sigma" išvedimas |  0.861029  |  |
+  |"Beta" išvedimas | 0.626815 |  |
+  |Viso testo trukmė| 8.140956|   |
 
 
 * 10 000 000 įrašų:
-  | Funkcija   | Vidutinis laikas (s)   |
-  |:-----------|:----------:|
-  | Failo nuskaitymas       |   57.355937 | 
-  | Rūšiavimas        |    6.242971  | 
-  | Dalinimas į 2 grupes     |3.301593 |
-  | "Sigma" išvedimas |  8.64999  |
-  |"Beta" išvedimas |  5.985857|
-  |Viso testo trukmė|81.523975 |
+ | Funkcija   | Vector  | List|
+  |:-----------|:----------:|:------------:|
+  | Failo nuskaitymas       |   57.355937 |   |
+  | Rūšiavimas        |    6.242971  |  |
+  | Dalinimas į 2 grupes     |3.301593 |  |
+  | "Sigma" išvedimas |  8.64999  |  |
+  |"Beta" išvedimas |  5.985857|  |
+  |Viso testo trukmė|81.523975 |  |
