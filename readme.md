@@ -30,13 +30,14 @@ Lentelėse pateiktas vidutinis testų laikas sekundėmis naudojant vector ir lis
   
 | Funkcija   | Vector  | List|
 |:-----------|:----------:|:------------:|
-| Failo nuskaitymas       |   0.007049 |  0.006176 |
+| Failo nuskaitymas       |   0.007049 |  0.006176 |   
 | Rūšiavimas        |   0.000362   | 0.000100 |
 | Dalinimas į 2 grupes     | 0.000218|  0.000480|
 | "Sigma" išvedimas |  0.004299  | 0.002947|
 |"Beta" išvedimas | 0.001367 | 0.001585 |
 |Viso testo trukmė| 0.013487| 0.011256 |
 
+<img src="https://github.com/user-attachments/assets/21687fc0-7779-4f04-8001-f640432bb8a2" alt="Description" width="500"/>
 
 * 10 000 įrašų:
   
@@ -48,6 +49,8 @@ Lentelėse pateiktas vidutinis testų laikas sekundėmis naudojant vector ir lis
 | "Sigma" išvedimas |    0.012350| 0.013929|
 |"Beta" išvedimas |  0.008186| 0.008271|
 |Viso testo trukmė| 0.092739|0.089417 |
+
+<img src="https://github.com/user-attachments/assets/d5213a2c-bfdd-4d18-9856-2b4afa10a905" alt="Description" width="500"/>
 
 
 * 100 000 įrašų:
@@ -61,6 +64,7 @@ Lentelėse pateiktas vidutinis testų laikas sekundėmis naudojant vector ir lis
 |"Beta" išvedimas | 0.070402 | 0.064387 |
 |Viso testo trukmė|0.840056 | 0.781400 |
 
+<img src="https://github.com/user-attachments/assets/3b2bf153-8350-4401-9f88-fa4cb39fdb27" alt="Description" width="500"/>
 
 * 1 000 000 įrašų:
   
@@ -73,6 +77,7 @@ Lentelėse pateiktas vidutinis testų laikas sekundėmis naudojant vector ir lis
   |"Beta" išvedimas | 0.626815 | 0.592574 |
   |Viso testo trukmė| 8.140956|  7.46862 |
 
+<img src="https://github.com/user-attachments/assets/d9adbcba-f130-4515-80b0-c3cb13e5ef17" alt="Description" width="500"/>
 
 * 10 000 000 įrašų:
   
@@ -84,3 +89,7 @@ Lentelėse pateiktas vidutinis testų laikas sekundėmis naudojant vector ir lis
   | "Sigma" išvedimas |  8.64999  | 9.017396 |
   |"Beta" išvedimas |  5.985857| 5.814621 |
   |Viso testo trukmė|81.523975 | 80.550325 |
+
+  <img src="https://github.com/user-attachments/assets/b941ddff-4c49-4188-91c6-8942cc296ce4" alt="Description" width="500"/>
+
+
