@@ -92,4 +92,13 @@ Lentelėse pateiktas vidutinis testų laikas sekundėmis naudojant vector ir lis
 
   <img src="https://github.com/user-attachments/assets/b941ddff-4c49-4188-91c6-8942cc296ce4" alt="Description" width="500"/>
 
+  Tyrimo išvados:
+  -------
+  Labiausiai skiriasi failo nuskaitymo ir dalinimo į dvi grupes testo vidurkiai su visų dydžių failais. 
+  
+  * Su list'ais nuskaitymas veikia greičiau nei su vektoriais.
+  * Tačiau duomenų skirstymas į dvi grupes list'uose vyksta beveik dvigubai lėčiau nei vector'iuose su visų dydžių failais.
+  
+  
+
 
