@@ -11,7 +11,8 @@
    * Programa parašyta taip, kad vietoje vector naudotų list konteinerį informacijai apie studentus saugoti.
    * Duomenis įvedus ranka, šalia studentų duomenų yra išvedamas ir to studento saugojimo atmintyje adresas.
    * Atliekami programos greičio testai, jų vidurkiai lyginami su v0.2 versijos rezultatais (t.y. programa naudoja vector konteinerį).
-
+     
+Kompiuterio specifikacijos:
   **CPU: 12th Gen Intel(R) Core(TM) i7-1260P   2.10 GHz**
   
   **RAM: 16 GB**
