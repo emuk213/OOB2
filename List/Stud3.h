@@ -21,6 +21,7 @@ void isvedimas(list <Stud>& vec, const string& failoPav);
 void kategorijos(list<Stud>& list1, list<Stud>& sigma, list<Stud>& beta);
 
 void kategorijos2(list<Stud>& list1, list<Stud>& beta);
+void kategorijos3(list<Stud>& list1, list<Stud>& beta);
 
 bool lygintiVardas(Stud& a, Stud& b);
 bool lygintiPavarde(Stud& a, Stud& b);
