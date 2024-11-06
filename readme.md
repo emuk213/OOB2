@@ -1,3 +1,69 @@
+# **V1.0**
+
+Testų vidurkiai:
+---------------
+
+Buvo atlikti 8 testai.
+
+Lentelėse pateiktas vidutinis testų laikas sekundėmis naudojant vector ir list.
+
+* 1 000 įrašų:
+  
+| Funkcija   | 2_strategija su vector  | 2_strategija su list|
+|:-----------|:----------:|:------------:|
+| Failo nuskaitymas       |    |   |   
+| Rūšiavimas        |      |  |
+| Dalinimas į 2 grupes     | |  |
+| "Sigma" išvedimas |    | |
+|"Beta" išvedimas |  |  |
+|Viso testo trukmė|   |  |
+
+* 10 000 įrašų:
+
+| Funkcija   | 2_strategija su vector  | 2_strategija su list|
+|:-----------|:----------:|:------------:|
+| Failo nuskaitymas       |    |   |   
+| Rūšiavimas        |      |  |
+| Dalinimas į 2 grupes     | |  |
+| "Sigma" išvedimas |    | |
+|"Beta" išvedimas |  |  |
+|Viso testo trukmė|   |  |
+
+* 100 000 įrašų:
+
+| Funkcija   | 2_strategija su vector  | 2_strategija su list|
+|:-----------|:----------:|:------------:|
+| Failo nuskaitymas       |    |   |   
+| Rūšiavimas        |      |  |
+| Dalinimas į 2 grupes     | |  |
+| "Sigma" išvedimas |    | |
+|"Beta" išvedimas |  |  |
+|Viso testo trukmė|   |  |
+
+* 1 000 000 įrašų:
+
+| Funkcija   | 2_strategija su vector  | 2_strategija su list|
+|:-----------|:----------:|:------------:|
+| Failo nuskaitymas       |    |   |   
+| Rūšiavimas        |      |  |
+| Dalinimas į 2 grupes     | |  |
+| "Sigma" išvedimas |    | |
+|"Beta" išvedimas |  |  |
+|Viso testo trukmė|   |  |
+
+* 10 000 000 įrašų:
+
+| Funkcija   | 2_strategija su vector  | 2_strategija su list|
+|:-----------|:----------:|:------------:|
+| Failo nuskaitymas       |    |   |   
+| Rūšiavimas        |      |  |
+| Dalinimas į 2 grupes     | |  |
+| "Sigma" išvedimas |    | |
+|"Beta" išvedimas |  |  |
+|Viso testo trukmė|   |  |
+
+
+# **V0.3**
 1. Project_v0.3.cpp yra main failas,
 2. MyLib3.h faile aprašytos bibliotekos,
 3. Stud3.cpp faile surašytos visos funkcijos,
