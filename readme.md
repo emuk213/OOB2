@@ -44,12 +44,12 @@ Lentelėse pateiktas vidutinis testų laikas sekundėmis naudojant vector ir lis
 
 | Funkcija   | 2_strategija su vector  | 2_strategija su list|
 |:-----------|:----------:|:------------:|
-| Failo nuskaitymas       |    |   |   
-| Rūšiavimas        |      |  |
-| Dalinimas į 2 grupes     | |  |
-| "Sigma" išvedimas |    | |
-|"Beta" išvedimas |  |  |
-|Viso testo trukmė|   |  |
+| Failo nuskaitymas       |    |  3.350006 |   
+| Rūšiavimas        |      | 0.401233 |
+| Dalinimas į 2 grupes     | |  0.141924|
+| "Sigma" išvedimas |    | 0.583383|
+|"Beta" išvedimas |  | 0.398344 |
+|Viso testo trukmė|   |  4.874893|
 
 * 10 000 000 įrašų:
 
