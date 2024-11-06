@@ -47,6 +47,13 @@ void kategorijos2(list<Stud>& list1, list<Stud>& beta) {
         }
     }
 }
+void kategorijos3(list<Stud>& list1, list<Stud>& beta) {
+    auto partitionPoint = partition(list1.begin(), list1.end(), [](const Stud& s) {
+        return s.galutinisVid >= 5;
+    });
+    beta.splice(beta.end(), list1, partitionPoint, list1.end());
+}
+
 bool lygintiVardas(Stud& a, Stud& b) {
     return a.vardas < b.vardas;
 }
