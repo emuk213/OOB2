@@ -36,6 +36,17 @@ void kategorijos(list<Stud>& list1, list<Stud>& sigma, list<Stud>& beta) {
     }
     list1.clear();
 }
+void kategorijos2(list<Stud>& list1, list<Stud>& beta) {
+    for (auto it = list1.begin(); it != list1.end(); ) {
+        if (it->galutinisVid < 5) {
+            beta.push_back(*it);
+            it = list1.erase(it);
+        }
+        else {
+            ++it;
+        }
+    }
+}
 bool lygintiVardas(Stud& a, Stud& b) {
     return a.vardas < b.vardas;
 }
@@ -84,7 +95,7 @@ void input(Stud& Lok) {
                 }
             }
 
-            cin.clear(); //isvalo klaidos busena
+            cin.clear();
             cin.ignore(numeric_limits<streamsize>::max(), '\n');
 
             cout << "Input Exam score: ";
@@ -120,7 +131,6 @@ void readStudTxt(const string& failoVardas, list<Stud>& studentai) {
         if (!inFile.is_open()) {
             throw runtime_error("Error: unable to open file: " + failoVardas);
         }
-        //studentai.reserve(10000000);
         string line;
         getline(inFile, line);
         while (getline(inFile, line)) {
