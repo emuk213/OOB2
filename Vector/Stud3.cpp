@@ -52,13 +52,13 @@ void kategorijos2(vector<Stud>& vector1, vector<Stud>& beta) {
 
 }
 void kategorijos3(vector<Stud>& vector1, vector<Stud>& beta) {
-    auto partitionPoint = std::partition(vector1.begin(), vector1.end(), [](const Stud& s) {
-        return s.galutinisVid >= 5;
-    });
+    auto partitionPoint = partition(vector1.begin(), vector1.end(), [](const Stud& s) {
+     return s.galutinisVid >= 5;
+ });
 
-    beta.insert(beta.end(), std::make_move_iterator(partitionPoint), std::make_move_iterator(vector1.end()));
+ beta.insert(beta.end(), make_move_iterator(partitionPoint), make_move_iterator(vector1.end()));
 
-    vector1.erase(partitionPoint, vector1.end());
+ vector1.erase(partitionPoint, vector1.end());
 }
 
 bool lygintiVardas(Stud& a, Stud& b) {
