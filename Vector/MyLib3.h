@@ -39,6 +39,8 @@ using std::cerr;
 using std::exception;
 using std::ofstream;
 using std::to_string;
+using std::partition;
+using std::make_move_iterator;
 
 
 #endif // MYLIB_H_INCLUDED
