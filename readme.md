@@ -8,7 +8,7 @@
 
 **Įdiegimo instrukcija**
 ----------
-Naudokite terminalą.
+Naudokite terminalą ir CMake.
 1. Parsisiųskite projektą kaip ZIP failą.
 2. Išskleiskite projektą:
    ```
