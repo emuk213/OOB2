@@ -153,6 +153,9 @@ int main()
 
                 double e2 = t2.elapsed();
                 cout << to_string(n) + " irasu dalinimas i 2 grupes uztruko: " << e2 << " s\n";
+                
+                sortByChoice(vector1, f);
+                sortByChoice(beta, f);
 
                 Timer t3;
                 isvedimas(vector1, "sigma" + to_string(n) + ".txt");
