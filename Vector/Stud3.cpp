@@ -36,6 +36,31 @@ void kategorijos(vector<Stud>& vector1, vector<Stud>& sigma, vector<Stud>& beta)
     }
     vector1.clear();
 }
+void kategorijos2(vector<Stud>& vector1, vector<Stud>& beta) {
+    int n = vector1.size();
+    int j = 0;
+    for (int i = 0; i < n; ++i) {
+        if (vector1[i].galutinisVid < 5) {
+            beta.push_back(vector1[i]);
+        }
+        else {
+            vector1[j] = vector1[i];
+            ++j;
+        }
+    }
+    vector1.resize(j);
+
+}
+void kategorijos3(vector<Stud>& vector1, vector<Stud>& beta) {
+    auto partitionPoint = std::partition(vector1.begin(), vector1.end(), [](const Stud& s) {
+        return s.galutinisVid >= 5;
+    });
+
+    beta.insert(beta.end(), std::make_move_iterator(partitionPoint), std::make_move_iterator(vector1.end()));
+
+    vector1.erase(partitionPoint, vector1.end());
+}
+
 bool lygintiVardas(Stud& a, Stud& b) {
     return a.vardas < b.vardas;
 }
