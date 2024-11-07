@@ -8,7 +8,29 @@
 
 **Įdiegimo instrukcija**
 ----------
-
+Naudokite terminalą.
+1. Parsisiųskite projektą kaip ZIP failą.
+2. Išskleiskite projektą:
+   ```
+   unzip projekto-pav.ZIP
+   ```
+   
+4. Nukopijuokite projekto direktoriją, sukuriame buid direktoriją ir į ją persikeliame:
+   ```
+   cd /direktorija/i/projekta
+   mkdir build
+   cd build
+   ```
+5. Paleidžiame CMake, kad sugeneruotų reikalingus failus:
+   ```
+   cmake ..
+   ```
+6. Sukompiliuojame kodą, sukuriame .exe failą:
+   
+   ```
+   cmake --build
+   ```
+   
 # **V1.0**
 ----------------------------------------------
 1. main.cpp yra main failas,
