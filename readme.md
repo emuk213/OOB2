@@ -92,6 +92,9 @@ Lentelėse pateiktas vidutinis testų laikas sekundėmis naudojant vector ir lis
 
 Tyrimo išvados:
 ---------------
+ * Remiantis v0.3 versijos testų rezultatais antra studentu skirstymo pagal galutinį balą strategija veikia greičiau nei pirmoji.
+ * Visų dydžių failams trečia strategija (naudojamas partition algoritmas) veikia greičiausiai ir su vector'iais, ir su list'ais. Išimtis: 100 000 įrašų failas. Jam greičiausiai su list'u veikė antra strategija (laiko skirtumas labai nedidelis, apie 0.003s), su vector'iumi trečia.
+ * Naudojant vector'ius daug didesnis greičio skirtumas tarp antros ir trečios strategijos, nei naudojant list'us. Trečia strategija su vektoriais veikia maždaug 3 kartus greičiau.
 
 
 
@@ -208,7 +211,7 @@ Lentelėse pateiktas vidutinis testų laikas sekundėmis naudojant vector ir lis
 * pasirinkti ar vartotjas nori generuoti naujus 5 failus (1000, 10000, 1000000, 10000000 įrašų)
 * pasirinkti pagal ką būtų rūšiuojami išvedimo duomenys (vardą, pavardę ar galutinį balą)
 * apskaičiuoti failų generavimo laiką
-* apskaičiuoti failų rūčiavimo, nuskaitymo ir išvedimo laiką
+* apskaičiuoti failų rūšiavimo, nuskaitymo ir išvedimo laiką
 * padalinti studentus į dvi grupes pagal galutinį balą ("sigma" - galutinis balas >= 5, "beta" - galutinis balas < 5).
 
 Testų vidurkiai:
