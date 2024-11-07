@@ -46,23 +46,23 @@ Lentelėse pateiktas vidutinis testų laikas sekundėmis naudojant vector ir lis
 
 | Funkcija   | 2_strategija su vector  | 2_strategija su list|3_strategija su vector|3_strategija su list|
 |:-----------|:----------:|:------------:|:------------:|:---------:|
-| Failo nuskaitymas       |    |  3.350006 |     |  5.391963|
-| Rūšiavimas        |      | 0.401233 |  |0.565133  |
-| Dalinimas į 2 grupes     | |  0.141924|  | 0.114295 |
-| "Sigma" išvedimas |    | 0.583383|  | 0.944535 |
-|"Beta" išvedimas |  | 0.398344 |  | 0.654641 |
-|Viso testo trukmė|   |  4.874893|  |  7.670571|
+| Failo nuskaitymas       |  4.0932  |  3.350006 |     |  5.391963|
+| Rūšiavimas        |    0.526682  | 0.401233 |  |0.565133  |
+| Dalinimas į 2 grupes     |0.164642 |  0.141924|  | 0.114295 |
+| "Sigma" išvedimas |  0.723316  | 0.583383|  | 0.944535 |
+|"Beta" išvedimas | 0.557543 | 0.398344 |  | 0.654641 |
+|Viso testo trukmė|  6.065383 |  4.874893|  |  7.670571|
 
 * 10 000 000 įrašų:
 
 | Funkcija   | 2_strategija su vector  | 2_strategija su list|3_strategija su vector|3_strategija su list|
 |:-----------|:----------:|:------------:|:------------:|:---------:|
-| Failo nuskaitymas       |    |  34.16475 |    | 50.802437 | 
-| Rūšiavimas        |      | 6.104373 |  | 8.220571 |
-| Dalinimas į 2 grupes     | |  1.392186|  | 1.102128 |
-| "Sigma" išvedimas |    |6.21747 |  | 9.161067 |
-|"Beta" išvedimas |  | 4.178442 |  | 6.657571 |
-|Viso testo trukmė|   | 52.057225 |  |75.943775  |
+| Failo nuskaitymas       |   44.880362 |  34.16475 |    | 50.802437 | 
+| Rūšiavimas        |    6.517658  | 6.104373 |  | 8.220571 |
+| Dalinimas į 2 grupes     | 1.941232|  1.392186|  | 1.102128 |
+| "Sigma" išvedimas |  8.124385  |6.21747 |  | 9.161067 |
+|"Beta" išvedimas | 5.698845 | 4.178442 |  | 6.657571 |
+|Viso testo trukmė| 67.3361  | 52.057225 |  |75.943775  |
 
 
 # **V0.3**
