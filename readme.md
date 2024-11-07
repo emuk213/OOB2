@@ -17,7 +17,7 @@
 4. Stud3.h faile aprašyta struktūra ir funkcijų deklaracijos.
 5. Failu_kurimas.cpp faile yra failų generavimo ir duomenų išvedimo į failus funkcijos.
 6. RandInt.h aprašoma atsitiktinių skaičių generavimo klasė.
-7. Timer.h laiko skaičiavimo klasė.
+7. Timer.h laiko skaičiavimo klasė,
 8. CmakeList.txt
 
 **Kas naujo?**
