@@ -291,7 +291,29 @@ Buvo atlikti 8 testai.
   |"Beta" išvedimas |  5.985857|
   |Viso testo trukmė|81.523975 |
 
-  
+# **V.1**
+--------------------------------------------------
+1. Project_v0.1.cpp yra main failas,
+2. MyLib.h faile aprašytos bibliotekos,
+3. Stud.cpp faile surašytos visos funkcijos,
+4. Stud.h faile aprašyta struktūra ir funkcijų deklaracijos.
+
+**Kas naujo?**
+-----------
+Programa leidžia vartotojui pasirinkti atsitiktinai generuojamų namų darbų kiekį.
+Duomenis galima nuskaityti iš failo arba įvesti pačiam.
+Išimčių valdymas:
+* visi "0", "1" atsakymai į užklausas nebūtų raidė ar kitas skaičius;
+* įmanoma atidaryti tekstinį failą;
+* tekstinio failo eilutėje yra įvestų namų darbų ar egzamino rezultatų;
+* tekstiniame faile įvesti ND ir egzamino rezultatai yra tarp 1 ir 10;
+* įvestas studentų ar atsitiktinai generuojamų namų darbų skaičius nėra raidė ar kitas simbolis;
+* įvesti namų darbų ir egzamino rezultatas yra tarp 1 ir 10.
+Išvedimo duomenys surūšiuoti pagal pavardę.
+Papildomai užkomentuota yra funkcija, kuri išvestų iš tekstinio failo nuskaitytus duomenis patikrai. Taip pat užkomentuotos eilutės, kurios išvestų atsitiktinai sugeneruotus namų darbų ir egzamino rezultatus.
+
+
+
   
 
 
