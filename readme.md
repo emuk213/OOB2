@@ -24,6 +24,8 @@ Naudokite terminalą ir CMake.
    
    ```
    cmake --build . --config Release
+   
+   copy src\studentai1000.txt Releasezstudentai1000.txt
    ```
    
 # **V1.0**
