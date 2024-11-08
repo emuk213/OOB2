@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.25)
-project(OOB-1.0)
+project(Vector)
 include_directories(include)
 file(GLOB SOURCES "src/*.cpp")
-add_executable(OOB-1.0 ${SOURCES})
+add_executable(Vector ${SOURCES})
