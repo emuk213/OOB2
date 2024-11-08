@@ -36,6 +36,7 @@ Naudokite terminalą ir CMake.
 6. RandInt.h aprašoma atsitiktinių skaičių generavimo klasė.
 7. Timer.h laiko skaičiavimo klasė,
 8. CmakeLists.txt
+9. run.bat paleidimo failas.
 
 **Kas naujo?**
    -------
