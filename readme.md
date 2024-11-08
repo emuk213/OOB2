@@ -35,7 +35,7 @@ Naudokite terminalą ir CMake.
 5. Failu_kurimas.cpp faile yra failų generavimo ir duomenų išvedimo į failus funkcijos.
 6. RandInt.h aprašoma atsitiktinių skaičių generavimo klasė.
 7. Timer.h laiko skaičiavimo klasė,
-8. CmakeList.txt
+8. CmakeLists.txt
 
 **Kas naujo?**
    -------
