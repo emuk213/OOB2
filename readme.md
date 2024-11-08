@@ -9,23 +9,18 @@
 **Įdiegimo instrukcija**
 ----------
 Naudokite terminalą ir CMake.
-1. Parsisiųskite projektą kaip ZIP failą.
-2. Išskleiskite projektą:
-   ```
-   unzip projekto-pav.ZIP
-   ```
-   
-4. Nukopijuokite projekto direktoriją, sukuriame buid direktoriją ir į ją persikeliame:
+1. Parsisiųskite projektą kaip ZIP failą ir išskleiskite projektą (extract).
+2. Nukopijuokite projekto direktoriją, sukuriame buid direktoriją ir į ją persikeliame:
    ```
    cd /direktorija/i/projekta
    mkdir build
    cd build
    ```
-5. Paleidžiame CMake, kad sugeneruotų reikalingus failus:
+3. Paleidžiame CMake, kad sugeneruotų reikalingus failus:
    ```
    cmake ..
    ```
-6. Sukompiliuojame kodą, sukuriame .exe failą:
+4. Sukompiliuojame kodą, sukuriame .exe failą:
    
    ```
    cmake --build
