@@ -12,7 +12,7 @@ Naudokite terminalą ir CMake.
 1. Parsisiųskite projektą kaip ZIP failą ir išskleiskite projektą (extract).
 2. Nukopijuokite projekto direktoriją, sukuriame buid direktoriją ir į ją persikeliame:
    ```
-   cd /direktorija/i/projekta
+   cd "[direktorija į projektą]"
    mkdir build
    cd build
    ```
