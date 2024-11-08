@@ -23,9 +23,7 @@ Naudokite terminalą ir CMake.
 4. Sukompiliuojame kodą, sukuriame .exe failą:
    
    ```
-   cmake --build . --config Release
-   
-   copy src\studentai1000.txt Releasezstudentai1000.txt
+   cmake --build . --config Release 
    ```
    
 # **V1.0**
