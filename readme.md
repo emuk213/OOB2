@@ -23,7 +23,7 @@ Naudokite terminalą ir CMake.
 4. Sukompiliuojame kodą, sukuriame .exe failą:
    
    ```
-   cmake --build
+   cmake --build . --config [Release arba Debug]
    ```
    
 # **V1.0**
