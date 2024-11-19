@@ -34,14 +34,14 @@ void kurti_faila(const string& failas, int eil) {
     cout << "Failo generavimas uztruko: " << e0 << "s\n";
 }
 
-void isvedimas(vector <Stud>& vec, const string& failoPav) {
+void isvedimas(const vector<Stud>& vec, const string& failoPav) {
     ofstream failas(failoPav);
     failas << setw(15) << left << "Vardas" << setw(15) << left << "Pavarde" << setw(5) << right << "Galutinis balas vid." << "\n";
     failas.precision(2);
     failas.setf(std::ios::fixed);
 
     for (const Stud& studentas : vec) {
-        failas << setw(15) << left << studentas.vardas << setw(15) << left << studentas.pavarde << setw(5) << right << studentas.galutinisVid << "\n";
+        failas << setw(15) << left << studentas.vardas() << setw(15) << left << studentas.pavarde() << setw(5) << right << studentas.galutinisVid() << "\n";
     }
 
     failas.close();
