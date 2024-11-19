@@ -1,3 +1,4 @@
+
 #include <iostream>
 #include "MyLib3.h"
 #include "Stud3.h"
@@ -19,7 +20,7 @@ int main()
             if (cin.fail() || (a != 0 && a != 1)) {
                 throw runtime_error("Error: wrong input");
             }
-            cout << "By what do you want to sort the data (0 - name, 1 - surname, 2 - final score?" << endl;
+            cout << "By what do you want to sort the data (0 - name, 1 - surname, 2 - final score)?" << endl;
             cin >> x;
             cout << "Do you want to read data from txt file (0 - no, 1 - yes)?" << endl;
 
@@ -35,7 +36,7 @@ int main()
                 readStudTxt(failoVardas, vector1);
 
                 for (Stud& student : vector1) {
-                    skaiciuotiGalutiniBala(student);
+                    student.skaiciuotiGalutiniBala();
                 }
                 sortByChoice(vector1, x);
                 output(vector1, a);
@@ -51,10 +52,10 @@ int main()
 
                 for (int i = 0; i < g; i++) {
                     cout << "Please input student data:" << endl;
-                    input(temp);
-                    skaiciuotiGalutiniBala(temp);
+                    temp.input();
+                    temp.skaiciuotiGalutiniBala();
                     vector1.push_back(temp);
-                    clean(temp);
+                    temp.clean();
                 }
 
                 sortByChoice(vector1, x);
@@ -86,24 +87,26 @@ int main()
         cout << "Kokia strategija norite naudoti (1, 2, 3)?" << endl;
         cin >> strategija;
 
-
         int n = 1000;
         for (int i = 0; i < 5; i++) {
-
+            vector1.clear();
+            sigma.clear();
+            beta.clear();
+            string failas = "studentai" + std::to_string(n) + ".txt";
             Timer t;
-            readStudTxt("studentai" + to_string(n) + ".txt", vector1);
+           readStudTxt(failas, vector1);
+            
             double e = t.elapsed();
             cout << "\nFailo is " + to_string(n) + " irasu nuskaitymas uztruko: " << e << " s\n";
-
-
+           
             for (Stud& temp : vector1) {
-                skaiciuotiGalutiniBala(temp);
+                temp.skaiciuotiGalutiniBala();
             }
             Timer t1;
             sortByChoice(vector1, f);
             double e1 = t1.elapsed();
             cout << to_string(n) + " irasu rusiavimas uztruko: " << e1 << " s\n";
-            
+
             if (strategija == 1) {
                 Timer t2;
 
@@ -152,7 +155,7 @@ int main()
                 kategorijos3(vector1, beta);
 
                 double e2 = t2.elapsed();
-                cout << to_string(n) + " irasu dalinimas i 2 st3 grupes uztruko: " << e2 << " s\n";
+                cout << to_string(n) + " irasu dalinimas i 2 grupes uztruko: " << e2 << " s\n";
 
                 sortByChoice(vector1, f);
                 sortByChoice(beta, f);
@@ -169,9 +172,7 @@ int main()
 
                 double totalTime = e + e1 + e2 + e3 + e4;
                 cout << "\n" + to_string(n) + " irasu testo laikas: " << totalTime << " s\n";
-
             }
-
             n *= 10;
         }
     }
