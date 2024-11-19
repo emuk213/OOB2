@@ -20,17 +20,17 @@ double skaiciuotiNdMed(vector <int>& nd) {
     }
 }
 
-void skaiciuotiGalutiniBala(Stud& Lok) {
-    Lok.galutinisVid = 0.4 * skaiciuotiNdVid(Lok.nd) + 0.6 * Lok.egz;
-    Lok.galutinisMed = 0.4 * skaiciuotiNdMed(Lok.nd) + 0.6 * Lok.egz;
+void Stud::skaiciuotiGalutiniBala() {
+    galutinisVid_ = 0.4 * skaiciuotiNdVid(nd_) + 0.6 * egz_;
+    galutinisMed_ = 0.4 * skaiciuotiNdMed(nd_) + 0.6 * egz_;
 }
 
 void kategorijos(list<Stud>& list1, list<Stud>& sigma, list<Stud>& beta) {
-    for(const Stud& student:list1){
-        if (student.galutinisVid < 5) {
+    for (const Stud& student : list1) {
+        if (student.galutinisVid() < 5) {
             beta.push_back(student);
         }
-        else if (student.galutinisVid >= 5) {
+        else if (student.galutinisVid() >= 5) {
             sigma.push_back(student);
         }
     }
@@ -38,7 +38,7 @@ void kategorijos(list<Stud>& list1, list<Stud>& sigma, list<Stud>& beta) {
 }
 void kategorijos2(list<Stud>& list1, list<Stud>& beta) {
     for (auto it = list1.begin(); it != list1.end(); ) {
-        if (it->galutinisVid < 5) {
+        if ((*it).galutinisVid() < 5) {
             beta.push_back(*it);
             it = list1.erase(it);
         }
@@ -49,20 +49,15 @@ void kategorijos2(list<Stud>& list1, list<Stud>& beta) {
 }
 void kategorijos3(list<Stud>& list1, list<Stud>& beta) {
     auto partitionPoint = partition(list1.begin(), list1.end(), [](const Stud& s) {
-        return s.galutinisVid >= 5;
-    });
+        return s.galutinisVid() >= 5;
+        });
     beta.splice(beta.end(), list1, partitionPoint, list1.end());
 }
 
-bool lygintiVardas(Stud& a, Stud& b) {
-    return a.vardas < b.vardas;
-}
-bool lygintiPavarde(Stud& a, Stud& b) {
-    return a.pavarde < b.pavarde;
-}
-bool lygintiGalutinis(Stud& a, Stud& b) {
-    return a.galutinisVid < b.galutinisVid;
-}
+bool lygintiVardas(const Stud& a, const Stud& b) {return a.vardas() < b.vardas();}
+bool lygintiPavarde(const Stud& a, const Stud& b) {return a.pavarde() < b.pavarde();}
+bool lygintiGalutinis(const Stud& a, const Stud& b) {return a.galutinisVid() < b.galutinisVid();}
+
 void sortByChoice(list<Stud>& vec, int b) {
     if (b == 0) {
         vec.sort(lygintiVardas);
@@ -76,11 +71,11 @@ void sortByChoice(list<Stud>& vec, int b) {
 }
 
 
-void input(Stud& Lok) {
+void Stud::input() {
     constexpr int max = 10;
     RandInt rnd{ 1, max };
     cout << "Input Name, Surname:" << endl;
-    cin >> Lok.vardas >> Lok.pavarde;
+    cin >> vardas_ >> pavarde_;
 
     cout << "Do you want randomized ND and Exam scores (0 - no, 1 - yes)?" << endl;
     int ats;
@@ -98,16 +93,16 @@ void input(Stud& Lok) {
                     throw runtime_error("Error: invalid ND input");
                 }
                 else {
-                    Lok.nd.push_back(paz);
+                    nd_.push_back(paz);
                 }
             }
 
-            cin.clear();
+            cin.clear(); //isvalo klaidos busena
             cin.ignore(numeric_limits<streamsize>::max(), '\n');
 
             cout << "Input Exam score: ";
-            cin >> Lok.egz;
-            if (Lok.egz < 1 || Lok.egz > 10) {
+            cin >> egz_;
+            if (egz_ < 1 || egz_ > 10) {
                 throw runtime_error("Error: invalid Exam input");
             }
         }
@@ -120,9 +115,9 @@ void input(Stud& Lok) {
             }
 
             for (int i = 0; i < ndSk; i++) {
-                Lok.nd.push_back(rnd());
+                nd_.push_back(rnd());
             }
-            Lok.egz = rnd();
+            egz_ = rnd();
         }
     }
     catch (exception& e) {
@@ -142,34 +137,7 @@ void readStudTxt(const string& failoVardas, list<Stud>& studentai) {
         getline(inFile, line);
         while (getline(inFile, line)) {
             istringstream iss(line);
-            Stud Lok1;
-            int score;
-            string x;
-
-            iss >> Lok1.vardas >> Lok1.pavarde;
-
-            Lok1.nd.clear();
-            while (iss >> x) {
-
-                score = std::stoi(x);
-
-                Lok1.nd.push_back(score);
-
-            }
-
-            for (int i = 0; i < Lok1.nd.size(); i++) {
-                if ((Lok1.nd.at(i) < 1 || Lok1.nd.at(i) > 10)) {
-                    throw runtime_error("Error: ND score must be between 1 and 10");
-                }
-            }
-            if (Lok1.nd.empty()) {
-                throw runtime_error("Error: no ND scores found in line: " + line);
-            }
-
-            Lok1.egz = Lok1.nd.back();
-
-            Lok1.nd.pop_back();
-
+            Stud Lok1(iss);
 
             studentai.push_back(Lok1);
         }
@@ -185,23 +153,61 @@ void readStudTxt(const string& failoVardas, list<Stud>& studentai) {
     }
 }
 
-void output(const list <Stud>& list1, int a) {
+Stud::Stud(istream& is) {
+    readStudent(is);
+}
+
+istream& Stud::readStudent(istream& is) {
+    string vardas, pavarde, x;
+    vector<int> nd;
+    int score, egz;
+    is >> vardas >> pavarde;
+    setVardas(vardas);
+    setPavarde(pavarde);
+
+    nd.clear();
+
+    while (is >> x) {
+        score = std::stoi(x);
+        nd.push_back(score);
+    }
+
+    for (int i = 0; i < nd.size(); i++) {
+        if ((nd.at(i) < 1 || nd.at(i) > 10)) {
+            throw runtime_error("Error: ND score must be between 1 and 10");
+        }
+    }
+    if (nd.empty()) {
+        throw runtime_error("Error: no ND scores found");
+    }
+
+    egz = nd.back();
+
+    nd.pop_back();
+    setEgz(egz);
+    setNd(nd);
+
+
+}
+
+
+void output(const list <Stud>& vector1, int a) {
     if (a == 0) {
         cout << setw(15) << left << "Name" << setw(15) << left << "Surname" << setw(30) << left << "Final average score (vid.)" << setw(15) << right << "Adress" << endl;
-        for (const Stud& student : list1) {
-            cout << setw(15) << left << student.vardas << setw(15) << left << student.pavarde << setw(30) << setprecision(2) << fixed << left << student.galutinisVid << setw(15) << left << &student << endl;
+        for (const Stud& student : vector1) {
+            cout << setw(15) << left << student.vardas() << setw(15) << left << student.pavarde() << setw(30) << setprecision(2) << fixed << left << student.galutinisVid() << setw(15) << left << &student << endl;
         }
     }
     else if (a == 1) {
         cout << setw(15) << left << "Name" << setw(15) << left << "Surname" << setw(30) << left << "Final average score (med.)" << setw(15) << right << "Adress" << endl;
-        for (const Stud& student : list1) {
-            cout << setw(15) << left << student.vardas << setw(15) << left << student.pavarde << setw(30) << setprecision(2) << fixed << left << student.galutinisMed << setw(15) << left << &student << endl;
+        for (const Stud& student : vector1) {
+            cout << setw(15) << left << student.vardas() << setw(15) << left << student.pavarde() << setw(30) << setprecision(2) << fixed << left << student.galutinisMed() << setw(15) << left << &student << endl;
         }
     }
 }
 
-void clean(Stud& Lok) {
-    Lok.vardas.clear();
-    Lok.pavarde.clear();
-    Lok.nd.clear();
+void Stud::clean() {
+    vardas_.clear();
+    pavarde_.clear();
+    nd_.clear();
 }
