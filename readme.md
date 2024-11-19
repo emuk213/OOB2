@@ -49,29 +49,29 @@ Testų vidurkiai:
 
 Buvo atlikti 5 testai.
 
-Lentelėse pateiktas vidutinis testų laikas sekundėmis naudojant `**LIST**` ir 3 skirstymo strategiją.
+Lentelėse pateiktas vidutinis testų laikas sekundėmis naudojant `vector` ir 3 dalinimo į 2 grupes strategiją.
 
-* 1 000 0000 įrašų:
+* 100 000 įrašų:
   
-| Funkcija           | Struct_list | Class_list  |
+| Funkcija           |Struct_vector| Class_vector|
 |:-------------------|:-----------:|:-----------:|
-|Failo nuskaitymas   |             |             |
-|Rūšiavimas          |             |             |
-|Dalinimas į 2 grupes|             |             |
-|"Sigma" išvedimas   |             |             |
-|"Beta" išvedimas    |             |             |
-| Viso testo trukmė  |             |             |     
+|Failo nuskaitymas   |    0.551681 |  0.596265   |
+|Rūšiavimas          |    0.042794 |  0.126591   |
+|Dalinimas į 2 grupes|   0.003696  |  0.019929   |
+|"Sigma" išvedimas   |  0.087069   |  0.084964   |
+|"Beta" išvedimas    |  0.062781   |  0.056621   |
+| Viso testo trukmė  |  0.750380   |  0.884373   |     
 
-* 10 000 0000 įrašų:
+* 1 000 000 įrašų:
   
-| Funkcija           | Struct_list | Class_list  |
+| Funkcija           |Struct_vector| Class_vector|
 |:-------------------|:-----------:|:-----------:|
-|Failo nuskaitymas   |             |             |
-|Rūšiavimas          |             |             |
-|Dalinimas į 2 grupes|             |             |
-|"Sigma" išvedimas   |             |             |
-|"Beta" išvedimas    |             |             |
-| Viso testo trukmė  |             |             |
+|Failo nuskaitymas   |  5.270314   |  5.751194   |
+|Rūšiavimas          |  0.518232   | 1.485370    |
+|Dalinimas į 2 grupes|   0.046979  |  0.139557   |
+|"Sigma" išvedimas   |  0.733518   | 0.766893    |
+|"Beta" išvedimas    |  0.507979   |   0.530507  |
+| Viso testo trukmė  |  7.077026   |   8.673524  |
 
 Analizė su `-O1`, `-O2`, `-O3` flag'ais:
 --------------------------------------
