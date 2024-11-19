@@ -7,10 +7,10 @@
 #include <iomanip>
 #include <algorithm>
 #include <fstream>
-#include <sstream> //del getline
-#include <ios> //(del streamsize)
-#include <limits> //(del numeric limits)
-#include <cstdlib> //(del rand, exit())
+#include <sstream>
+#include <ios>
+#include <limits>
+#include <cstdlib>
 #include <stdexcept>
 #include <exception>
 #include <random>
@@ -41,6 +41,8 @@ using std::exception;
 using std::ofstream;
 using std::to_string;
 using std::list;
+using std::istream;
+using std::sort;
 
 
 #endif // MYLIB_H_INCLUDED
