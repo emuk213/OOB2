@@ -101,11 +101,11 @@ Analizė su `-O1`, `-O2`, `-O3` flag'ais:
 
 * Class list:
                                         
-|Flag   |  Greitis (s)| exe dydis |
+|Flag   |  Greitis (s)| exe dydis (KB) |
 |:------|:------------|:----------|
-|-O1    |             |           |
-|-O2    |             |           |
-|-O3    |             |           |
+|-O1    |  148.68     |   151.14  |
+|-O2    |   146.61    |  149.78   |
+|-O3    |    147.77   |   153.16  |
 
 Tyrimo išvados:
 ---------------
