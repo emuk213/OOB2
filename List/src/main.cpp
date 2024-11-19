@@ -35,7 +35,7 @@ int main()
                 readStudTxt(failoVardas, list1);
 
                 for (Stud& student : list1) {
-                    skaiciuotiGalutiniBala(student);
+                    student.skaiciuotiGalutiniBala();
                 }
                 sortByChoice(list1, x);
                 output(list1, a);
@@ -51,10 +51,10 @@ int main()
 
                 for (int i = 0; i < g; i++) {
                     cout << "Please input student data:" << endl;
-                    input(temp);
-                    skaiciuotiGalutiniBala(temp);
+                    temp.input();
+                    temp.skaiciuotiGalutiniBala();
                     list1.push_back(temp);
-                    clean(temp);
+                    temp.clean();
                 }
 
                 sortByChoice(list1, x);
@@ -88,22 +88,25 @@ int main()
 
         int n = 1000;
         for (int i = 0; i < 5; i++) {
-          
+
             Timer t;
+            list1.clear();
+            sigma.clear();
+            beta.clear();
             readStudTxt("studentai" + to_string(n) + ".txt", list1);
             double e = t.elapsed();
             cout << "\nFailo is " + to_string(n) + " irasu nuskaitymas uztruko: " << e << " s\n";
 
 
             for (Stud& temp : list1) {
-                skaiciuotiGalutiniBala(temp);
+                temp.skaiciuotiGalutiniBala();
             }
             Timer t1;
             sortByChoice(list1, f);
             double e1 = t1.elapsed();
             cout << to_string(n) + " irasu rusiavimas uztruko: " << e1 << " s\n";
 
-           if (strategija == 1) {
+            if (strategija == 1) {
                 Timer t2;
 
                 kategorijos(list1, sigma, beta);
@@ -124,7 +127,7 @@ int main()
                 cout << "\n" + to_string(n) + " irasu testo laikas: " << totalTime << " s\n";
             }
 
-           else if (strategija == 2) {
+            else if (strategija == 2) {
                 Timer t2;
 
                 kategorijos2(list1, beta);
@@ -145,27 +148,27 @@ int main()
                 cout << "\n" + to_string(n) + " irasu testo laikas: " << totalTime << " s\n";
             }
             else if (strategija == 3) {
-               Timer t2;
+                Timer t2;
 
-               kategorijos3(list1, beta);
-               double e2 = t2.elapsed();
-               cout << to_string(n) + " irasu dalinimas i 2 grupes uztruko: " << e2 << " s\n";
-               sortByChoice(list1, f);
-               sortByChoice(beta, f);
+                kategorijos3(list1, beta);
+                double e2 = t2.elapsed();
+                cout << to_string(n) + " irasu dalinimas i 2 grupes uztruko: " << e2 << " s\n";
+                sortByChoice(list1, f);
+                sortByChoice(beta, f);
 
-               Timer t3;
-               isvedimas(list1, "sigma" + to_string(n) + ".txt");
-               double e3 = t3.elapsed();
-               cout << to_string(n) + " irasu sigma irasymo i faila uztruko: " << e3 << " s\n";
+                Timer t3;
+                isvedimas(list1, "sigma" + to_string(n) + ".txt");
+                double e3 = t3.elapsed();
+                cout << to_string(n) + " irasu sigma irasymo i faila uztruko: " << e3 << " s\n";
 
-               Timer t4;
-               isvedimas(beta, "beta" + to_string(n) + ".txt");
-               double e4 = t4.elapsed();
-               cout << to_string(n) + " irasu beta irasymo i faila uztruko: " << e4 << " s\n";
+                Timer t4;
+                isvedimas(beta, "beta" + to_string(n) + ".txt");
+                double e4 = t4.elapsed();
+                cout << to_string(n) + " irasu beta irasymo i faila uztruko: " << e4 << " s\n";
 
-               double totalTime = e + e1 + e2 + e3 + e4;
-               cout << "\n" + to_string(n) + " irasu testo laikas: " << totalTime << " s\n";
-           }
+                double totalTime = e + e1 + e2 + e3 + e4;
+                cout << "\n" + to_string(n) + " irasu testo laikas: " << totalTime << " s\n";
+            }
             n *= 10;
         }
     }
