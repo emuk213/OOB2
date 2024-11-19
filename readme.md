@@ -85,19 +85,19 @@ Analizė su `-O1`, `-O2`, `-O3` flag'ais:
 
 * Class vector:
                                       
-|Flag   |  Greitis (s)| exe dydis |
+|Flag   |  Greitis (s)| exe dydis (KB)|
 |:------|:------------|:----------|
-|-O1    |       |           |
-|-O2    |             |           |
-|-O3    |             |           |
+|-O1    |    147.91   |   174.36  |
+|-O2    |   136.50    |   168.03  |
+|-O3    |     136.35  |    181.86 |
 
 * Struct list:
                                          
-|Flag   |  Greitis (s)| exe dydis |
+|Flag   |  Greitis (s)| exe dydis (KB) |
 |:------|:------------|:----------|
-|-O1    |             |           |
-|-O2    |             |           |
-|-O3    |             |           |
+|-O1    |     132.97  |  150.25   |
+|-O2    |    139.63   |   149.39  |
+|-O3    |   143.10    |   150.16  |
 
 * Class list:
                                         
