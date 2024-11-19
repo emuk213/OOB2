@@ -25,7 +25,86 @@ Naudokite terminalą ir CMake.
    ```
    cmake --build . --config Release 
    ```
-   
+
+# **V1.1**
+----------------------------------------------
+1. main.cpp yra main failas,
+2. MyLib3.h faile aprašytos bibliotekos,
+3. Stud3.cpp faile surašytos visos funkcijos,
+4. Stud3.h faile aprašyta klasė ir funkcijų deklaracijos.
+5. Failu_kurimas.cpp faile yra failų generavimo ir duomenų išvedimo į failus funkcijos.
+6. RandInt.h aprašoma atsitiktinių skaičių generavimo klasė.
+7. Timer.h laiko skaičiavimo klasė,
+8. CmakeLists.txt
+9. run.bat paleidimo failas.
+
+**Kas naujo?**
+   -------
+   * Programa realizuota naudojant `class`, vietoje `struct`
+   * Programa parašyta ir naudojimui su `vector`'iumi, ir su `list`'u
+   * Ir `struct` ir `class` programos versijos ištirtos su optimizavimo flag'ais `-O1`, `-O2`, `-O3`
+
+Testų vidurkiai:
+---------------
+
+Buvo atlikti 5 testai.
+
+Lentelėse pateiktas vidutinis testų laikas sekundėmis naudojant `**LIST**` ir 3 skirstymo strategiją.
+
+* 1 000 0000 įrašų:
+| Funkcija           | Struct_list | Class_list  |
+|:-------------------|:-----------:|:-----------:|
+|Failo nuskaitymas   |             |             |
+|Rūšiavimas          |             |             |
+|Dalinimas į 2 grupes|             |             |
+|"Sigma" išvedimas   |             |             |
+|"Beta" išvedimas    |             |             |
+| Viso testo trukmė  |             |             |     
+
+* 10 000 0000 įrašų:
+| Funkcija           | Struct_list | Class_list  |
+|:-------------------|:-----------:|:-----------:|
+|Failo nuskaitymas   |             |             |
+|Rūšiavimas          |             |             |
+|Dalinimas į 2 grupes|             |             |
+|"Sigma" išvedimas   |             |             |
+|"Beta" išvedimas    |             |             |
+| Viso testo trukmė  |             |             |
+
+Analizė su `-O1`, `-O2`, `-O3` flag'ais:
+--------------------------------------
+* Struct vector:                                       
+|Flag   |  Greitis (s)| exe dydis |
+|:------|:------------|:----------|
+|-O1    |             |           |
+|-O2    |             |           |
+|-O3    |             |           |
+
+* Class vector:                                       
+|Flag   |  Greitis (s)| exe dydis |
+|:------|:------------|:----------|
+|-O1    |             |           |
+|-O2    |             |           |
+|-O3    |             |           |
+
+* Struct list:                                       
+|Flag   |  Greitis (s)| exe dydis |
+|:------|:------------|:----------|
+|-O1    |             |           |
+|-O2    |             |           |
+|-O3    |             |           |
+
+* Class list:                                       
+|Flag   |  Greitis (s)| exe dydis |
+|:------|:------------|:----------|
+|-O1    |             |           |
+|-O2    |             |           |
+|-O3    |             |           |
+
+Tyrimo išvados:
+---------------
+
+
 # **V1.0**
 ----------------------------------------------
 1. main.cpp yra main failas,
