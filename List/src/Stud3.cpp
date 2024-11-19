@@ -187,7 +187,7 @@ istream& Stud::readStudent(istream& is) {
     setEgz(egz);
     setNd(nd);
 
-
+    return is;
 }
 
 
