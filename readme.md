@@ -52,6 +52,7 @@ Buvo atlikti 5 testai.
 Lentelėse pateiktas vidutinis testų laikas sekundėmis naudojant `**LIST**` ir 3 skirstymo strategiją.
 
 * 1 000 0000 įrašų:
+  
 | Funkcija           | Struct_list | Class_list  |
 |:-------------------|:-----------:|:-----------:|
 |Failo nuskaitymas   |             |             |
@@ -62,6 +63,7 @@ Lentelėse pateiktas vidutinis testų laikas sekundėmis naudojant `**LIST**` ir
 | Viso testo trukmė  |             |             |     
 
 * 10 000 0000 įrašų:
+  
 | Funkcija           | Struct_list | Class_list  |
 |:-------------------|:-----------:|:-----------:|
 |Failo nuskaitymas   |             |             |
@@ -73,28 +75,32 @@ Lentelėse pateiktas vidutinis testų laikas sekundėmis naudojant `**LIST**` ir
 
 Analizė su `-O1`, `-O2`, `-O3` flag'ais:
 --------------------------------------
-* Struct vector:                                       
+* Struct vector:
+                                
 |Flag   |  Greitis (s)| exe dydis |
 |:------|:------------|:----------|
 |-O1    |             |           |
 |-O2    |             |           |
 |-O3    |             |           |
 
-* Class vector:                                       
+* Class vector:
+                                      
 |Flag   |  Greitis (s)| exe dydis |
 |:------|:------------|:----------|
 |-O1    |             |           |
 |-O2    |             |           |
 |-O3    |             |           |
 
-* Struct list:                                       
+* Struct list:
+                                         
 |Flag   |  Greitis (s)| exe dydis |
 |:------|:------------|:----------|
 |-O1    |             |           |
 |-O2    |             |           |
 |-O3    |             |           |
 
-* Class list:                                       
+* Class list:
+                                        
 |Flag   |  Greitis (s)| exe dydis |
 |:------|:------------|:----------|
 |-O1    |             |           |
