@@ -199,8 +199,8 @@ istream& Stud::readStudent(istream& is) {
     nd.pop_back();
     setEgz(egz);
     setNd(nd);
-
-
+    
+    return is;
 }
 
 
