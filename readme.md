@@ -42,7 +42,7 @@ Naudokite terminalą ir CMake.
    -------
    * Programa realizuota naudojant `class`, vietoje `struct`
    * Programa parašyta ir naudojimui su `vector`'iumi, ir su `list`'u
-   * Ir `struct` ir `class` programos versijos ištirtos su optimizavimo flag'ais `-O1`, `-O2`, `-O3`
+   * Ir `struct`, ir `class` programos versijos ištirtos su optimizavimo flag'ais `-O1`, `-O2`, `-O3`
 
 Testų vidurkiai:
 ---------------
@@ -83,6 +83,10 @@ Analizė su `-O1`, `-O2`, `-O3` flag'ais:
 |-O2    |  108.14     |   173.93       |
 |-O3    |  109.83     |   187.65       |
 
+<img src="https://github.com/user-attachments/assets/b7660335-af08-41ff-95a6-ccfb4ebbd068" alt="Description" width="500"/>
+
+
+
 * Class vector:
                                       
 |Flag   |  Greitis (s)| exe dydis (KB)|
@@ -90,6 +94,8 @@ Analizė su `-O1`, `-O2`, `-O3` flag'ais:
 |-O1    |    147.91   |   174.36  |
 |-O2    |   136.50    |   168.03  |
 |-O3    |     136.35  |    181.86 |
+
+<img src="https://github.com/user-attachments/assets/467ff313-2a2b-4857-be84-69862988b7ee" alt="Description" width="500"/>
 
 * Struct list:
                                          
@@ -99,6 +105,8 @@ Analizė su `-O1`, `-O2`, `-O3` flag'ais:
 |-O2    |    139.63   |   149.39  |
 |-O3    |   143.10    |   150.16  |
 
+<img src="https://github.com/user-attachments/assets/818e6126-db34-4643-9ccc-6772b883eb8a" alt="Description" width="500"/>
+
 * Class list:
                                         
 |Flag   |  Greitis (s)| exe dydis (KB) |
@@ -107,10 +115,19 @@ Analizė su `-O1`, `-O2`, `-O3` flag'ais:
 |-O2    |   146.61    |  149.78   |
 |-O3    |    147.77   |   153.16  |
 
+<img src="https://github.com/user-attachments/assets/11f9f304-8a80-4907-aea8-ac0a5fa2dcac" alt="Description" width="500"/>
+
 Tyrimo išvados:
 ---------------
+ 1 000 000 ir 10 000 000 įrašų atveju, programa realizuota su `struct ` veikia šiek tiek greičiau nei su `class`.
 
+ Programa realizuota su `vector` konteineriu su visais flag'ais veikia greičiau nei `list` programa, tačiau jos exe failai yra didesni.
+  
+ Ir su `vector`'iumi, ir su `list`'u programos veikia greičiausiai su `-O2` flag'u. Išskyrus `class` `vector` programos versiją, jos `-O3` flag'as veikia nežymiai greičiau nei `-O2` flag'as.
+ 
+ Didžiausi exe failai yra `-O3` flag'o, mažiausi `-O2`.
 
+* Taigi, atsižvelgiant į programos veikimo greitį ir exe failų dydį, optimaliausia būtų naudoti `vector` `struct` arba `list` `struct` programos versijas, naudojant `-O2` flag'ą.
 # **V1.0**
 ----------------------------------------------
 1. main.cpp yra main failas,
