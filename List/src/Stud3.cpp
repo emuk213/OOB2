@@ -25,28 +25,7 @@ void Stud::skaiciuotiGalutiniBala() {
     galutinisMed_ = 0.4 * skaiciuotiNdMed(nd_) + 0.6 * egz_;
 }
 
-void kategorijos(list<Stud>& list1, list<Stud>& sigma, list<Stud>& beta) {
-    for (const Stud& student : list1) {
-        if (student.galutinisVid() < 5) {
-            beta.push_back(student);
-        }
-        else if (student.galutinisVid() >= 5) {
-            sigma.push_back(student);
-        }
-    }
-    list1.clear();
-}
-void kategorijos2(list<Stud>& list1, list<Stud>& beta) {
-    for (auto it = list1.begin(); it != list1.end(); ) {
-        if ((*it).galutinisVid() < 5) {
-            beta.push_back(*it);
-            it = list1.erase(it);
-        }
-        else {
-            ++it;
-        }
-    }
-}
+
 void kategorijos3(list<Stud>& list1, list<Stud>& beta) {
     auto partitionPoint = partition(list1.begin(), list1.end(), [](const Stud& s) {
         return s.galutinisVid() >= 5;
