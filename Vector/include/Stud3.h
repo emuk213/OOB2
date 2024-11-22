@@ -37,9 +37,7 @@ static double skaiciuotiNdMed(vector <int>& nd);
 void output(const vector <Stud>& vector1, int a);
 void kurti_faila(const string& failas, int eil);
 void isvedimas(const vector<Stud>& vec, const string& failoPav);
-void kategorijos(vector<Stud>& vector1, vector<Stud>& sigma, vector<Stud>& beta);
 
-void kategorijos2(vector<Stud>& vector1, vector<Stud>& beta);
 void kategorijos3(vector<Stud>& vector1, vector<Stud>& beta);
 
 bool lygintiVardas(const Stud& a, const Stud& b);
