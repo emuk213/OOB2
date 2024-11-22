@@ -25,33 +25,6 @@ void Stud::skaiciuotiGalutiniBala() {
     galutinisMed_ = 0.4 * skaiciuotiNdMed(nd_) + 0.6 * egz_;
 }
 
-
-void kategorijos(vector<Stud>& vector1, vector<Stud>& sigma, vector<Stud>& beta) {
-    for(const Stud& student:vector1){
-        if (student.galutinisVid() < 5) {
-            beta.push_back(student);
-        }
-        else if (student.galutinisVid() >= 5) {
-            sigma.push_back(student);
-        }
-    }
-    vector1.clear();
-}
-void kategorijos2(vector<Stud>& vector1, vector<Stud>& beta) {
-    int n = vector1.size();
-    int j = 0;
-    for (int i = 0; i < n; ++i) {
-        if (vector1[i].galutinisVid() < 5) {
-            beta.push_back(vector1[i]);
-        }
-        else {
-            vector1[j] = vector1[i];
-            ++j;
-        }
-    }
-    vector1.resize(j);
-
-}
 void kategorijos3(vector<Stud>& vector1, vector<Stud>& beta) {
    auto partitionPoint = partition(vector1.begin(), vector1.end(), [](const Stud& s) {
         return s.galutinisVid() >= 5;
@@ -141,7 +114,7 @@ void Stud::input() {
 
 
 void readStudTxt(const string& failoVardas, vector<Stud>& studentai) {
-    ifstream inFile(failoVardas); //atidarome faila nuskaitymui
+    ifstream inFile(failoVardas);
     try {
         if (!inFile.is_open()) {
             throw runtime_error("Error: unable to open file: " + failoVardas);
@@ -199,8 +172,9 @@ istream& Stud::readStudent(istream& is) {
     nd.pop_back();
     setEgz(egz);
     setNd(nd);
-    
+
     return is;
+
 }
 
 
