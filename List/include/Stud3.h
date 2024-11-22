@@ -14,8 +14,8 @@ public:
 	Stud(istream& is);
 	istream& readStudent(istream&);
 
-	inline string vardas() const { return vardas_; }
-	inline string pavarde() const { return pavarde_; }
+	inline string vardas() const { return vardas_; }    // get'eriai, inline
+	inline string pavarde() const { return pavarde_; }  // get'eriai, inline
 	inline double galutinisVid() const { return galutinisVid_; }
 	inline double galutinisMed() const { return galutinisMed_; }
 	void input();
@@ -37,9 +37,7 @@ static double skaiciuotiNdMed(vector <int>& nd);
 void output(const list <Stud>& vector1, int a);
 void kurti_faila(const string& failas, int eil);
 void isvedimas(const list<Stud>& vec, const string& failoPav);
-void kategorijos(list<Stud>& list1, list<Stud>& sigma, list<Stud>& beta);
 
-void kategorijos2(list<Stud>& list1, list<Stud>& beta);
 void kategorijos3(list<Stud>& list1, list<Stud>& beta);
 
 bool lygintiVardas(const Stud& a, const Stud& b);
