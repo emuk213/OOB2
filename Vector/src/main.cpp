@@ -9,7 +9,7 @@ int main()
 {
     vector <Stud> vector1, sigma, beta;
     Stud temp;
-    int a, b, c, f, g, h, x, strategija;
+    int a, b, c, f, g, h, x;
     string failoVardas;
     cout << "Ar norite atlikti testus arba generuoti naujus failus (0-ne, 1-taip)?" << endl;
     cin >> h;
@@ -84,8 +84,6 @@ int main()
 
         cout << "Pagal ka norite rusiuoti duomenis? (0-varda, 1-pavarde, 2-galutini bala)" << endl;
         cin >> f;
-        cout << "Kokia strategija norite naudoti (1, 2, 3)?" << endl;
-        cin >> strategija;
 
         int n = 1000;
         for (int i = 0; i < 5; i++) {
@@ -107,72 +105,22 @@ int main()
             double e1 = t1.elapsed();
             cout << to_string(n) + " irasu rusiavimas uztruko: " << e1 << " s\n";
 
-            if (strategija == 1) {
-                Timer t2;
-
-                kategorijos(vector1, sigma, beta);
-
-                double e2 = t2.elapsed();
-                cout << to_string(n) + " irasu dalinimas i 2 grupes uztruko: " << e2 << " s\n";
-
-                Timer t3;
-                isvedimas(sigma, "sigma" + to_string(n) + ".txt");
-                double e3 = t3.elapsed();
-                cout << to_string(n) + " irasu sigma irasymo i faila uztruko: " << e3 << " s\n";
-
-                Timer t4;
-                isvedimas(beta, "beta" + to_string(n) + ".txt");
-                double e4 = t4.elapsed();
-                cout << to_string(n) + " irasu beta irasymo i faila uztruko: " << e4 << " s\n";
-
-                double totalTime = e + e1 + e2 + e3 + e4;
-                cout << "\n" + to_string(n) + " irasu testo laikas: " << totalTime << " s\n";
-            }
-            else if (strategija == 2) {
-                Timer t2;
-
-                kategorijos2(vector1, beta);
-
-                double e2 = t2.elapsed();
-                cout << to_string(n) + " irasu dalinimas i 2 grupes uztruko: " << e2 << " s\n";
-
-                Timer t3;
-                isvedimas(vector1, "sigma" + to_string(n) + ".txt");
-                double e3 = t3.elapsed();
-                cout << to_string(n) + " irasu sigma irasymo i faila uztruko: " << e3 << " s\n";
-
-                Timer t4;
-                isvedimas(beta, "beta" + to_string(n) + ".txt");
-                double e4 = t4.elapsed();
-                cout << to_string(n) + " irasu beta irasymo i faila uztruko: " << e4 << " s\n";
-
-                double totalTime = e + e1 + e2 + e3 + e4;
-                cout << "\n" + to_string(n) + " irasu testo laikas: " << totalTime << " s\n";
-            }
-            else if (strategija == 3) {
-                Timer t2;
-
-                kategorijos3(vector1, beta);
-
-                double e2 = t2.elapsed();
-                cout << to_string(n) + " irasu dalinimas i 2 grupes uztruko: " << e2 << " s\n";
-
-                sortByChoice(vector1, f);
-                sortByChoice(beta, f);
-
-                Timer t3;
-                isvedimas(vector1, "sigma" + to_string(n) + ".txt");
-                double e3 = t3.elapsed();
-                cout << to_string(n) + " irasu sigma irasymo i faila uztruko: " << e3 << " s\n";
-
-                Timer t4;
-                isvedimas(beta, "beta" + to_string(n) + ".txt");
-                double e4 = t4.elapsed();
-                cout << to_string(n) + " irasu beta irasymo i faila uztruko: " << e4 << " s\n";
-
-                double totalTime = e + e1 + e2 + e3 + e4;
-                cout << "\n" + to_string(n) + " irasu testo laikas: " << totalTime << " s\n";
-            }
+            Timer t2;
+            kategorijos3(vector1, beta);
+            double e2 = t2.elapsed();
+            cout << to_string(n) + " irasu dalinimas i 2 grupes uztruko: " << e2 << " s\n";
+            sortByChoice(vector1, f);
+            sortByChoice(beta, f);
+            Timer t3;
+            isvedimas(vector1, "sigma" + to_string(n) + ".txt");
+            double e3 = t3.elapsed();
+            cout << to_string(n) + " irasu sigma irasymo i faila uztruko: " << e3 << " s\n";
+            Timer t4;
+            isvedimas(beta, "beta" + to_string(n) + ".txt");
+            double e4 = t4.elapsed();
+            cout << to_string(n) + " irasu beta irasymo i faila uztruko: " << e4 << " s\n";
+            double totalTime = e + e1 + e2 + e3 + e4;
+            cout << "\n" + to_string(n) + " irasu testo laikas: " << totalTime << " s\n";
             n *= 10;
         }
     }
