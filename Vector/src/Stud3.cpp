@@ -21,14 +21,20 @@ double skaiciuotiNdMed(vector <int>& nd) {
 }
 
 void Stud::skaiciuotiGalutiniBala() {
+
+    if (nd_.empty()) {
+        cerr << "Klaida: ND balai yra tusciame vektoriuje!" << endl;
+        throw runtime_error("ND balai yra tusciame vektoriuje");
+    }
+
     galutinisVid_ = 0.4 * skaiciuotiNdVid(nd_) + 0.6 * egz_;
     galutinisMed_ = 0.4 * skaiciuotiNdMed(nd_) + 0.6 * egz_;
 }
 
 void kategorijos3(vector<Stud>& vector1, vector<Stud>& beta) {
-   auto partitionPoint = partition(vector1.begin(), vector1.end(), [](const Stud& s) {
+    auto partitionPoint = partition(vector1.begin(), vector1.end(), [](const Stud& s) {
         return s.galutinisVid() >= 5;
-    });
+        });
 
     beta.insert(beta.end(), make_move_iterator(partitionPoint), make_move_iterator(vector1.end()));
 
@@ -83,7 +89,7 @@ void Stud::input() {
                 }
             }
 
-            cin.clear();
+            cin.clear(); //isvalo klaidos busena
             cin.ignore(numeric_limits<streamsize>::max(), '\n');
 
             cout << "Input Exam score: ";
@@ -113,8 +119,8 @@ void Stud::input() {
 }
 
 
-void readStudTxt(const string& failoVardas, vector<Stud>& studentai) {
-    ifstream inFile(failoVardas);
+void Stud::input(const string& failoVardas, vector<Stud>& studentai) {
+    ifstream inFile(failoVardas); //atidarome faila nuskaitymui
     try {
         if (!inFile.is_open()) {
             throw runtime_error("Error: unable to open file: " + failoVardas);
@@ -173,12 +179,12 @@ istream& Stud::readStudent(istream& is) {
     setEgz(egz);
     setNd(nd);
 
-    return is;
 
+    return is;
 }
 
 
-void output(const vector <Stud>& vector1, int a) {
+void Stud::output(const vector <Stud>& vector1, int a) {
     if (a == 0) {
         cout << setw(15) << left << "Name" << setw(15) << left << "Surname" << setw(30) << left << "Final average score (vid.)" << setw(15) << right << "Adress" << endl;
         for (const Stud& student : vector1) {
