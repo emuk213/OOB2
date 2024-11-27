@@ -4,7 +4,7 @@
 #include "RandInt.h"
 #include "Timer.h"
 
-void kurti_faila(const string& failas, int eil) {
+void Stud::input(const string& failas, int eil) {
     Timer t0;
     ofstream studentai(failas);
 
@@ -34,7 +34,7 @@ void kurti_faila(const string& failas, int eil) {
     cout << "Failo generavimas uztruko: " << e0 << "s\n";
 }
 
-void isvedimas(const vector<Stud>& vec, const string& failoPav) {
+void Stud::output(const vector<Stud>& vec, const string& failoPav) {
     ofstream failas(failoPav);
     failas << setw(15) << left << "Vardas" << setw(15) << left << "Pavarde" << setw(5) << right << "Galutinis balas vid." << "\n";
     failas.precision(2);
