@@ -8,16 +8,16 @@
 #include <algorithm>
 #include <fstream>
 #include <sstream>
-#include <ios>
-#include <limits>
-#include <cstdlib>
+#include <ios> 
+#include <limits> 
+#include <cstdlib> 
 #include <stdexcept>
 #include <exception>
 #include <random>
 #include <ctime>
 #include <chrono>
-
 #include <list>
+
 
 using std::endl;
 using std::cout;
@@ -40,8 +40,11 @@ using std::cerr;
 using std::exception;
 using std::ofstream;
 using std::to_string;
-using std::list;
+using std::partition;
+using std::make_move_iterator;
 using std::istream;
+using std::ostream;
+using std::list;
 using std::sort;
 
 
