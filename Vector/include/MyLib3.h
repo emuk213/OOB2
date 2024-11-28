@@ -7,15 +7,16 @@
 #include <iomanip>
 #include <algorithm>
 #include <fstream>
-#include <sstream>
-#include <ios>
-#include <limits>
-#include <cstdlib>
+#include <sstream> //del getline
+#include <ios> //(del streamsize)
+#include <limits> //(del numeric limits)
+#include <cstdlib> //(del rand, exit())
 #include <stdexcept>
 #include <exception>
 #include <random>
 #include <ctime>
 #include <chrono>
+
 
 using std::endl;
 using std::cout;
@@ -41,6 +42,7 @@ using std::to_string;
 using std::partition;
 using std::make_move_iterator;
 using std::istream;
+using std::ostream;
 
 
 #endif // MYLIB_H_INCLUDED
