@@ -23,12 +23,13 @@ double skaiciuotiNdMed(vector <int>& nd) {
 void Stud::skaiciuotiGalutiniBala() {
 
     if (nd_.empty()) {
-        cerr << "Klaida: ND balai yra tusciame vektoriuje!" << endl;
         throw runtime_error("ND balai yra tusciame vektoriuje");
     }
-
     galutinisVid_ = 0.4 * skaiciuotiNdVid(nd_) + 0.6 * egz_;
     galutinisMed_ = 0.4 * skaiciuotiNdMed(nd_) + 0.6 * egz_;
+
+    galutinisVid_ = round(galutinisVid_ * 100.0) / 100.0;
+    galutinisMed_ = round(galutinisMed_ * 100.0) / 100.0;
 }
 
 void kategorijos3(vector<Stud>& vector1, vector<Stud>& beta) {
@@ -62,7 +63,7 @@ void sortByChoice(vector<Stud>& vec, int b) {
     }
 }
 
-
+//is terminalo
 void Stud::input() {
     constexpr int max = 10;
     RandInt rnd{ 1, max };
@@ -118,44 +119,30 @@ void Stud::input() {
     }
 }
 
-
-void Stud::input(const string& failoVardas, vector<Stud>& studentai) {
-    ifstream inFile(failoVardas); //atidarome faila nuskaitymui
-    try {
-        if (!inFile.is_open()) {
-            throw runtime_error("Error: unable to open file: " + failoVardas);
+//i terminala
+void Stud::output(const vector <Stud>& vector1, int a) {
+  
+    if (a == 0) {
+        cout << setw(15) << left << "Name" << setw(15) << left << "Surname" << setw(30) << left << "Final average score (vid.)" << setw(15) << right << "Adress" << endl;
+        for (const Stud& student : vector1) {
+            cout << setw(15) << left << student.vardas() << setw(15) << left << student.pavarde() << setw(30) << left << student.galutinisVid() << setw(15) << left << &student << endl;
         }
-        string line;
-        getline(inFile, line);
-        while (getline(inFile, line)) {
-            istringstream iss(line);
-            Stud Lok1(iss);
-
-            studentai.push_back(Lok1);
+    }
+    else if (a == 1) {
+        cout << setw(15) << left << "Name" << setw(15) << left << "Surname" << setw(30) << left << "Final average score (med.)" << setw(15) << right << "Adress" << endl;
+        for (const Stud& student : vector1) {
+            cout << setw(15) << left << student.vardas() << setw(15) << left << student.pavarde() << setw(30)  << left << student.galutinisMed() << setw(15) << left << &student << endl;
         }
-        inFile.close();
-
-    }
-    catch (const std::invalid_argument& e) {
-        throw runtime_error("Error: ND score is a letter");
-    }
-    catch (exception& e) {
-        cerr << e.what() << endl;
-        exit(EXIT_FAILURE);
     }
 }
 
-Stud::Stud(istream& is) {
-    readStudent(is);
-}
-
-istream& Stud::readStudent(istream& is) {
+istream& operator>>(istream& is, Stud& student) {
     string vardas, pavarde, x;
     vector<int> nd;
     int score, egz;
     is >> vardas >> pavarde;
-    setVardas(vardas);
-    setPavarde(pavarde);
+    student.setVardas(vardas);
+    student.setPavarde(pavarde);
 
     nd.clear();
 
@@ -176,31 +163,42 @@ istream& Stud::readStudent(istream& is) {
     egz = nd.back();
 
     nd.pop_back();
-    setEgz(egz);
-    setNd(nd);
-
+    student.setEgz(egz);
+    student.setNd(nd);
 
     return is;
 }
 
+ostream& operator<<(ostream& out, const Stud& student) {
 
-void Stud::output(const vector <Stud>& vector1, int a) {
-    if (a == 0) {
-        cout << setw(15) << left << "Name" << setw(15) << left << "Surname" << setw(30) << left << "Final average score (vid.)" << setw(15) << right << "Adress" << endl;
-        for (const Stud& student : vector1) {
-            cout << setw(15) << left << student.vardas() << setw(15) << left << student.pavarde() << setw(30) << setprecision(2) << fixed << left << student.galutinisVid() << setw(15) << left << &student << endl;
-        }
-    }
-    else if (a == 1) {
-        cout << setw(15) << left << "Name" << setw(15) << left << "Surname" << setw(30) << left << "Final average score (med.)" << setw(15) << right << "Adress" << endl;
-        for (const Stud& student : vector1) {
-            cout << setw(15) << left << student.vardas() << setw(15) << left << student.pavarde() << setw(30) << setprecision(2) << fixed << left << student.galutinisMed() << setw(15) << left << &student << endl;
-        }
-    }
+    out << setw(15) << left << student.vardas_ << setw(15) << left << student.pavarde_ << setw(5) << right << student.galutinisVid_ << "\n";
+
+    return out;
 }
 
 void Stud::clean() {
     vardas_.clear();
     pavarde_.clear();
     nd_.clear();
+}
+
+void Stud::demo(int demo) {
+    if (demo == 1) {
+        Stud obj1("Charlie", "Green", { 7, 8, 9 }, 8); 
+        obj1.skaiciuotiGalutiniBala();
+
+        //1.copy constructor
+        Stud obj2 = obj1;
+
+        //2.copy assignment operator
+        Stud obj3;
+        obj3 = obj1;
+
+        cout << "Obj1:" << endl;
+        obj1.display();
+        cout << "Obj2:" << endl;
+        obj2.display();
+        cout << "Obj3:" << endl;
+        obj3.display();
+    }
 }
