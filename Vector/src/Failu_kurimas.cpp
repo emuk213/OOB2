@@ -34,14 +34,43 @@ void Stud::input(const string& failas, int eil) {
     cout << "Failo generavimas uztruko: " << e0 << "s\n";
 }
 
+//is failo
+void Stud::input(const string& failoVardas, vector<Stud>& studentai) {
+    ifstream inFile(failoVardas); //atidarome faila nuskaitymui
+    try {
+        if (!inFile.is_open()) {
+            throw runtime_error("Error: unable to open file: " + failoVardas);
+        }
+        string line;
+        getline(inFile, line);
+        while (getline(inFile, line)) {
+            istringstream iss(line);
+            Stud Lok1;
+            iss >> Lok1;
+
+            studentai.push_back(Lok1);
+        }
+        inFile.close();
+
+    }
+    catch (const std::invalid_argument& e) {
+        throw runtime_error("Error: ND score is a letter");
+    }
+    catch (exception& e) {
+        cerr << e.what() << endl;
+        exit(EXIT_FAILURE);
+    }
+}
+
+
+//i faila
 void Stud::output(const vector<Stud>& vec, const string& failoPav) {
     ofstream failas(failoPav);
+   failas.precision(2);
+   failas.setf(std::ios::fixed);
     failas << setw(15) << left << "Vardas" << setw(15) << left << "Pavarde" << setw(5) << right << "Galutinis balas vid." << "\n";
-    failas.precision(2);
-    failas.setf(std::ios::fixed);
-
-    for (const Stud& studentas : vec) {
-        failas << setw(15) << left << studentas.vardas() << setw(15) << left << studentas.pavarde() << setw(5) << right << studentas.galutinisVid() << "\n";
+    for (const Stud& student : vec) {
+        failas << student;
     }
 
     failas.close();
