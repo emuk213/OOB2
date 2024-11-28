@@ -66,7 +66,7 @@ public:
 	void display() const{
 		cout << setw(15) << left << "Name" << setw(15) << left << "Surname" << setw(30) << left << "Final average score (vid.)" << setw(15) << endl;
 
-		cout << setw(15) << left << vardas_ << setw(15) << left << pavarde_ << setw(30) << setprecision(2) << fixed << left << galutinisVid_ << setw(15) << endl;
+		cout << setw(15) << left << vardas_ << setw(15) << left << pavarde_ << setw(30) << left << galutinisVid_ << setw(15) << endl;
 
 	}
 };
