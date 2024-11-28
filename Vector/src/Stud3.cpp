@@ -184,7 +184,7 @@ void Stud::clean() {
 
 void Stud::demo(int demo) {
     if (demo == 1) {
-        Stud obj1("Charlie", "Green", { 7, 8, 9 }, 8); 
+        Stud obj1("Zigmantas", "Alonis", { 7, 5, 9 }, 8); 
         obj1.skaiciuotiGalutiniBala();
 
         //1.copy constructor
