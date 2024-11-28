@@ -26,6 +26,34 @@ Naudokite terminalą ir CMake.
    cmake --build . --config Release 
    ```
 
+# **V1.2**
+---------------------------------------------
+1. main.cpp yra main failas.
+2. MyLib3.h faile aprašytos bibliotekos.
+3. Stud3.cpp faile surašytos visos funkcijos, realizuoti įvedimo/išvedimo operatoriai
+4. Stud3.h faile aprašyta klasė, konstruktoriai, funkcijų deklaracijos ir pnš.
+5. Failu_kurimas.cpp faile yra failų generavimo ir duomenų nuskaitymo, išvedimo į failus funkcijos.
+6. RandInt.h aprašoma atsitiktinių skaičių generavimo klasė.
+7. Timer.h laiko skaičiavimo klasė.
+8. CmakeLists.txt
+9. run.bat paleidimo failas.
+
+**Kas naujo?**
+------
+* Realizuoti ir demonstruojami visi *Rule of three* metodai (*desrtuctor*, *copy constructor*, *copy assignment operator*).
+* Perdengti įvesties ir išvesties metodai.
+* Sukurti įvesties ir išvesties operatoriai.
+
+------
+Perdengti `output` ir `input` metodai, jie skiriasi savo parametrais:
+ * void output(const vector<Stud>& vec, const string& failoPav); - išveda duomenis į failą.
+ * void output(const vector<Stud>& vector1, int a); - išveda duomenis į ekraną.
+ * void input(const string& failoVardas, vector<Stud>& studentai); - nuskaito duomenis iš failo.
+ * void input(const string& failas, int eil); - automatiškai sugeneruoja duomenis į failą.
+ * void input(); - duomenų įvedimas ranka.
+
+Stud3.h realizuota nauja funkcija `demo`, kuri demonstruoja, kad veikia kopijavimo konstruktorius ir kopijavimo priskyrimo operatorius.
+
 # **V1.1**
 ----------------------------------------------
 1. main.cpp yra main failas,
