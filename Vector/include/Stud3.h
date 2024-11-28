@@ -10,26 +10,15 @@ private:
 	double galutinisVid_, galutinisMed_;
 	
 public:
+	//default constructor
 	Stud() : egz_(0), galutinisVid_(0), galutinisMed_(0), vardas_(""), pavarde_("") { }
-	Stud(istream& is);
-	istream& readStudent(istream&);
-
-	/*
-	Stud(const Stud& op) : vardas_(op.vardas_), pavarde_(op.pavarde_), nd_(op.nd_), egz_(op.egz_),
-		galutinisVid_(op.galutinisVid_), galutinisMed_(op.galutinisMed_) {}*/
 	
-	Stud(const Stud& op);
-	
-	//Stud(string, string, int, double, double);
-	Stud(const Stud& c) {
-		vardas_ = c.vardas_;
-		pavarde_ = c.pavarde_;
-		nd_ = c.nd_;
-		egz_ = c.egz_;
-		galutinisVid_ = c.galutinisVid_;
-		galutinisMed_ = c.galutinisMed_;
+	Stud(string vardas, string pavarde, vector<int> nd, int egz) : vardas_(vardas), pavarde_(pavarde), nd_(nd), egz_(egz), galutinisVid_(0), galutinisMed_(0) {}
 
-	}
+	//1.copy constructor
+	Stud(const Stud& c) = default;
+
+	//2.copy assignment operator
 	Stud& operator=(const Stud& op) {
 		if (this != &op) {  // Apsauga nuo savees priskyrimo
 			vardas_ = op.vardas_;
@@ -41,51 +30,49 @@ public:
 		}
 		return *this;
 	}
+	//3.destructor
+	~Stud(){} //cout << "Destruktorius iskviestas " << vardas_ << " " << pavarde_ << endl;
 
-	
-	Stud& operator=(const Stud& op);
-
-
-	inline string vardas() const { return vardas_; }    // get'eriai, inline
-	inline string pavarde() const { return pavarde_; }  // get'eriai, inline
+	//getters:
+	inline string vardas() const { return vardas_; }
+	inline string pavarde() const { return pavarde_; }
 	inline double galutinisVid() const { return galutinisVid_; }
 	inline double galutinisMed() const { return galutinisMed_; }
-
-	void input();
-	void skaiciuotiGalutiniBala();
-	void clean();
+	vector<int> nd() const { return nd_; }
+	int egz() const { return egz_; }
+	
+	//setters:
 	void setVardas(const string& vardas) {vardas_ = vardas;}
 	void setPavarde(const string& pavarde) {pavarde_ = pavarde;}
 	void setNd(const vector<int>& nd) {nd_ = nd;}
 	void setEgz(int egz) {egz_ = egz;}
 
-	~Stud() = default;
-
-	friend istream& operator>>(istream& in, Stud& student);
+	//input/output operators:
+	friend istream& operator>>(istream& is, Stud& student);
 	friend ostream& operator<<(ostream& out, const Stud& student);
+
+	//perdengti metodai:
 	void output(const vector<Stud>& vec, const string& failoPav);
 	void output(const vector<Stud>& vector1, int a);
 
 	void input(const string& failoVardas, vector<Stud>& studentai);
 	void input(const string& failas, int eil);
-};
-/*
-Stud::Stud(string vardas, string pavarde,  int egz, double vid, double med) {
-	vardas_ = vardas;
-	pavarde_ = pavarde;
-	//nd_ = nd;
-	egz_ = egz;
-	galutinisVid_ = vid;
-	galutinisMed_ = med;
-}*/
+	void input();
 
-//void readStudTxt(const string& failoVardas, vector<Stud>& studentai);
+	void skaiciuotiGalutiniBala();
+	void clean();
+
+	void demo(int demo);
+	void display() const{
+		cout << setw(15) << left << "Name" << setw(15) << left << "Surname" << setw(30) << left << "Final average score (vid.)" << setw(15) << endl;
+
+		cout << setw(15) << left << vardas_ << setw(15) << left << pavarde_ << setw(30) << setprecision(2) << fixed << left << galutinisVid_ << setw(15) << endl;
+
+	}
+};
 
 static double skaiciuotiNdVid(const vector <int>& nd);
 static double skaiciuotiNdMed(vector <int>& nd);
-
-
-
 
 void kategorijos3(vector<Stud>& vector1, vector<Stud>& beta);
 
@@ -95,4 +82,3 @@ bool lygintiGalutinis(const Stud& a, const Stud& b);
 void sortByChoice(vector<Stud>& vec, int b);
 
 #endif //STUD_H_INCLUDED
-
