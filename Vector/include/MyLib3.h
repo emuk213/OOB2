@@ -7,10 +7,10 @@
 #include <iomanip>
 #include <algorithm>
 #include <fstream>
-#include <sstream> //del getline
-#include <ios> //(del streamsize)
-#include <limits> //(del numeric limits)
-#include <cstdlib> //(del rand, exit())
+#include <sstream>
+#include <ios>
+#include <limits>
+#include <cstdlib>
 #include <stdexcept>
 #include <exception>
 #include <random>
