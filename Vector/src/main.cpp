@@ -9,8 +9,15 @@ int main()
 {
     vector <Stud> vector1, sigma, beta;
     Stud temp;
-    int a, b, c, f, g, h, x;
+    int a, b, c, f, g, h, x, demo;
     string failoVardas;
+
+    cout << "Demo? (1-yes, 0-no)" << endl;
+    cin >> demo;
+    temp.demo(demo);
+    system("pause");
+    
+
     cout << "Ar norite atlikti testus arba generuoti naujus failus (0-ne, 1-taip)?" << endl;
     cin >> h;
     if (h == 0) {
@@ -33,13 +40,13 @@ int main()
                 cout << "Input file name" << endl;
                 cin >> failoVardas;
 
-                readStudTxt(failoVardas, vector1);
+                temp.input(failoVardas, vector1);
 
                 for (Stud& student : vector1) {
                     student.skaiciuotiGalutiniBala();
                 }
                 sortByChoice(vector1, x);
-                output(vector1, a);
+                temp.output(vector1, a);
             }
 
             else if (b == 0) {
@@ -59,7 +66,7 @@ int main()
                 }
 
                 sortByChoice(vector1, x);
-                output(vector1, a);
+                temp.output(vector1, a);
             }
         }
         catch (exception& e) {
@@ -67,7 +74,10 @@ int main()
             return 1;
         }
     }
+
     if (h == 1) {
+
+        temp.clean();
 
         cout << "Ar norite generuoti naujus studentu sarasu failus? (0-ne, 1-taip)" << endl;
         cin >> c;
@@ -75,8 +85,7 @@ int main()
             int d = 1000;
 
             for (int i = 0; i < 5; i++) {
-
-                kurti_faila("studentai" + to_string(d) + ".txt", d);
+                temp.input("studentai" + to_string(d) + ".txt", d);
                 d *= 10;
             }
 
@@ -91,12 +100,12 @@ int main()
             sigma.clear();
             beta.clear();
             string failas = "studentai" + std::to_string(n) + ".txt";
+
             Timer t;
-           readStudTxt(failas, vector1);
-            
+            temp.input(failas, vector1);
             double e = t.elapsed();
             cout << "\nFailo is " + to_string(n) + " irasu nuskaitymas uztruko: " << e << " s\n";
-           
+
             for (Stud& temp : vector1) {
                 temp.skaiciuotiGalutiniBala();
             }
@@ -112,11 +121,11 @@ int main()
             sortByChoice(vector1, f);
             sortByChoice(beta, f);
             Timer t3;
-            isvedimas(vector1, "sigma" + to_string(n) + ".txt");
+            temp.output(vector1, "sigma" + to_string(n) + ".txt");
             double e3 = t3.elapsed();
             cout << to_string(n) + " irasu sigma irasymo i faila uztruko: " << e3 << " s\n";
             Timer t4;
-            isvedimas(beta, "beta" + to_string(n) + ".txt");
+            temp.output(beta, "beta" + to_string(n) + ".txt");
             double e4 = t4.elapsed();
             cout << to_string(n) + " irasu beta irasymo i faila uztruko: " << e4 << " s\n";
             double totalTime = e + e1 + e2 + e3 + e4;
