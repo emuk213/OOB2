@@ -11,34 +11,70 @@ private:
 	
 public:
 	Stud() : egz_(0), galutinisVid_(0), galutinisMed_(0), vardas_(""), pavarde_("") { }
-	Stud(istream& is);
-	istream& readStudent(istream&);
+	
+	Stud(string vardas, string pavarde, vector<int> nd, int egz) : vardas_(vardas), pavarde_(pavarde), nd_(nd), egz_(egz), galutinisVid_(0), galutinisMed_(0) {}
 
-	inline string vardas() const { return vardas_; }    // get'eriai, inline
-	inline string pavarde() const { return pavarde_; }  // get'eriai, inline
+	//1.copy constructor
+	Stud(const Stud& c) = default;
+
+	//2.copy assignment operator
+	Stud& operator=(const Stud& op) {
+		if (this != &op) {  // Apsauga nuo savees priskyrimo
+			vardas_ = op.vardas_;
+			pavarde_ = op.pavarde_;
+			nd_ = op.nd_;
+			egz_ = op.egz_;
+			galutinisVid_ = op.galutinisVid_;
+			galutinisMed_ = op.galutinisMed_;
+		}
+		return *this;
+	}
+	//3.destructor
+	~Stud(){} //cout << "Destruktorius iskviestas " << vardas_ << " " << pavarde_ << endl;
+
+	//getters:
+	inline string vardas() const { return vardas_; }
+	inline string pavarde() const { return pavarde_; }
 	inline double galutinisVid() const { return galutinisVid_; }
 	inline double galutinisMed() const { return galutinisMed_; }
-	void input();
-	void skaiciuotiGalutiniBala();
-	void clean();
+	vector<int> nd() const { return nd_; }
+	int egz() const { return egz_; }
+	
+	//setters:
 	void setVardas(const string& vardas) {vardas_ = vardas;}
 	void setPavarde(const string& pavarde) {pavarde_ = pavarde;}
 	void setNd(const vector<int>& nd) {nd_ = nd;}
 	void setEgz(int egz) {egz_ = egz;}
 
-	~Stud() { }
-};
+	//input/output operators:
+	friend istream& operator>>(istream& is, Stud& student);
+	friend ostream& operator<<(ostream& out, const Stud& student);
 
-void readStudTxt(const string& failoVardas, list<Stud>& studentai);
+	//perdengti metodai:
+	void output(const list<Stud>& vec, const string& failoPav);
+	void output(const list<Stud>& vector1, int a);
+
+	void input(const string& failoVardas, list<Stud>& studentai);
+	void input(const string& failas, int eil);
+	void input();
+
+	void skaiciuotiGalutiniBala();
+	void clean();
+
+	void demo(int demo);
+	void display() const{
+		//setprecision(2) << fixed
+		cout << setw(15) << left << "Name" << setw(15) << left << "Surname" << setw(30) << left << "Final average score (vid.)" << setw(15) << endl;
+
+		cout << setw(15) << left << vardas_ << setw(15) << left << pavarde_ << setw(30) << left << galutinisVid_ << setw(15) << endl;
+
+	}
+};
 
 static double skaiciuotiNdVid(const vector <int>& nd);
 static double skaiciuotiNdMed(vector <int>& nd);
 
-void output(const list <Stud>& vector1, int a);
-void kurti_faila(const string& failas, int eil);
-void isvedimas(const list<Stud>& vec, const string& failoPav);
-
-void kategorijos3(list<Stud>& list1, list<Stud>& beta);
+void kategorijos3(list<Stud>& vector1, list<Stud>& beta);
 
 bool lygintiVardas(const Stud& a, const Stud& b);
 bool lygintiPavarde(const Stud& a, const Stud& b);
@@ -46,4 +82,3 @@ bool lygintiGalutinis(const Stud& a, const Stud& b);
 void sortByChoice(list<Stud>& vec, int b);
 
 #endif //STUD_H_INCLUDED
-
