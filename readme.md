@@ -47,7 +47,7 @@ Naudokite terminalą ir CMake.
 ------
 Perdengti `output` ir `input` metodai, jie skiriasi savo parametrais:
  * void output(const vector<Stud>& vec, const string& failoPav); - išveda duomenis į failą.
- * void output(const vector<Stud>& vector1, int a); - išveda duomenis į ekraną.
+ * void output(const vector<Stud>& vector1); - išveda duomenis į ekraną.
  * void input(const string& failoVardas, vector<Stud>& studentai); - nuskaito duomenis iš failo.
  * void input(const string& failas, int eil); - automatiškai sugeneruoja duomenis į failą.
  * void input(); - duomenų įvedimas ranka.
