@@ -26,7 +26,7 @@ public:
 	void setNd(const vector<int>& nd) {nd_ = nd;}
 	void setEgz(int egz) {egz_ = egz;}
 
-	~Stud() { }
+	~Stud() { nd_.clear(); }
 };
 
 void readStudTxt(const string& failoVardas, list<Stud>& studentai);
