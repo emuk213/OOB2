@@ -23,6 +23,7 @@ double skaiciuotiNdMed(vector <int>& nd) {
 void Stud::skaiciuotiGalutiniBala() {
 
     if (nd_.empty()) {
+        cerr << "Klaida: ND balai yra tusciame vektoriuje!" << endl;
         throw runtime_error("ND balai yra tusciame vektoriuje");
     }
     galutinisVid_ = 0.4 * skaiciuotiNdVid(nd_) + 0.6 * egz_;
@@ -120,19 +121,10 @@ void Stud::input() {
 }
 
 //i terminala
-void Stud::output(const vector <Stud>& vector1, int a) {
-  
-    if (a == 0) {
-        cout << setw(15) << left << "Name" << setw(15) << left << "Surname" << setw(30) << left << "Final average score (vid.)" << setw(15) << right << "Adress" << endl;
-        for (const Stud& student : vector1) {
-            cout << setw(15) << left << student.vardas() << setw(15) << left << student.pavarde() << setw(30) << left << student.galutinisVid() << setw(15) << left << &student << endl;
-        }
-    }
-    else if (a == 1) {
-        cout << setw(15) << left << "Name" << setw(15) << left << "Surname" << setw(30) << left << "Final average score (med.)" << setw(15) << right << "Adress" << endl;
-        for (const Stud& student : vector1) {
-            cout << setw(15) << left << student.vardas() << setw(15) << left << student.pavarde() << setw(30)  << left << student.galutinisMed() << setw(15) << left << &student << endl;
-        }
+void Stud::output(const vector <Stud>& vector1) {
+    cout << setw(15) << left << "Name" << setw(15) << left << "Surname" << setw(30) << left << "Final average score (vid.)" << setw(10) << right << "Adress" << endl;
+    for (const Stud& student : vector1) {
+        cout << student << " "<< setw(40) << right << &student << endl;
     }
 }
 
@@ -171,10 +163,11 @@ istream& operator>>(istream& is, Stud& student) {
 
 ostream& operator<<(ostream& out, const Stud& student) {
 
-    out << setw(15) << left << student.vardas_ << setw(15) << left << student.pavarde_ << setw(5) << right << student.galutinisVid_ << "\n";
+    out << setw(15) << left << student.vardas_ << setw(15) << left << student.pavarde_ << setw(5) << right << student.galutinisVid_;
 
     return out;
 }
+
 
 void Stud::clean() {
     vardas_.clear();
@@ -188,17 +181,17 @@ void Stud::demo(int demo) {
         obj1.skaiciuotiGalutiniBala();
 
         //1.copy constructor
-        Stud obj2 = obj1;
+        Stud obj2(obj1);
 
         //2.copy assignment operator
         Stud obj3;
         obj3 = obj1;
 
         cout << "Obj1:" << endl;
-        obj1.display();
+        cout << obj1 << endl;
         cout << "Obj2:" << endl;
-        obj2.display();
+        cout << obj2 << endl;
         cout << "Obj3:" << endl;
-        obj3.display();
+        cout << obj3 << endl;
     }
 }
