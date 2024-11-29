@@ -65,14 +65,13 @@ void Stud::input(const string& failoVardas, vector<Stud>& studentai) {
 
 //i faila
 void Stud::output(const vector<Stud>& vec, const string& failoPav) {
-    ofstream failas(failoPav);
+   ofstream failas(failoPav);
    failas.precision(2);
    failas.setf(std::ios::fixed);
-    failas << setw(15) << left << "Vardas" << setw(15) << left << "Pavarde" << setw(5) << right << "Galutinis balas vid." << "\n";
-    for (const Stud& student : vec) {
-        failas << student;
-    }
+   failas << setw(15) << left << "Vardas" << setw(15) << left << "Pavarde" << setw(5) << right << "Galutinis balas vid." << "\n";
+   for (const Stud& student : vec) {
+       failas << student << "\n";
+   }
 
-    failas.close();
-
+   failas.close();
 }
