@@ -15,7 +15,14 @@ public:
 	Stud(string vardas, string pavarde, vector<int> nd, int egz) : vardas_(vardas), pavarde_(pavarde), nd_(nd), egz_(egz), galutinisVid_(0), galutinisMed_(0) {}
 
 	//1.copy constructor
-	Stud(const Stud& c) = default;
+	Stud(const Stud& c) {
+		vardas_ = c.vardas_;
+		pavarde_ = c.pavarde_;
+		nd_ = c.nd_;
+		egz_ = c.egz_;
+		galutinisVid_ = c.galutinisVid_;
+		galutinisMed_ = c.galutinisMed_;
+	};
 
 	//2.copy assignment operator
 	Stud& operator=(const Stud& op) {
@@ -30,7 +37,7 @@ public:
 		return *this;
 	}
 	//3.destructor
-	~Stud(){} //cout << "Destruktorius iskviestas " << vardas_ << " " << pavarde_ << endl;
+	~Stud(){nd_.clear();}
 
 	//getters:
 	inline string vardas() const { return vardas_; }
@@ -52,7 +59,7 @@ public:
 
 	//perdengti metodai:
 	void output(const list<Stud>& vec, const string& failoPav);
-	void output(const list<Stud>& vector1, int a);
+	void output(const list<Stud>& vector1);
 
 	void input(const string& failoVardas, list<Stud>& studentai);
 	void input(const string& failas, int eil);
@@ -62,13 +69,6 @@ public:
 	void clean();
 
 	void demo(int demo);
-	void display() const{
-		//setprecision(2) << fixed
-		cout << setw(15) << left << "Name" << setw(15) << left << "Surname" << setw(30) << left << "Final average score (vid.)" << setw(15) << endl;
-
-		cout << setw(15) << left << vardas_ << setw(15) << left << pavarde_ << setw(30) << left << galutinisVid_ << setw(15) << endl;
-
-	}
 };
 
 static double skaiciuotiNdVid(const vector <int>& nd);
