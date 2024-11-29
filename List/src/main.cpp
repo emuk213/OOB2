@@ -9,7 +9,7 @@ int main()
 {
     list <Stud> vector1, sigma, beta;
     Stud temp;
-    int a, b, c, f, g, h, x, demo;
+    int b, c, f, g, h, x, demo;
     string failoVardas;
 
     cout << "Demo? (1-yes, 0-no)" << endl;
@@ -21,15 +21,10 @@ int main()
     cout << "Ar norite atlikti testus arba generuoti naujus failus (0-ne, 1-taip)?" << endl;
     cin >> h;
     if (h == 0) {
-        cout << "Do you want Final score with vid or med (0 - vid, 1 - med)?" << endl;
         try {
-            cin >> a;
-            if (cin.fail() || (a != 0 && a != 1)) {
-                throw runtime_error("Error: wrong input");
-            }
-            cout << "By what do you want to sort the data (0 - name, 1 - surname, 2 - final score)?" << endl;
+            cout << "Pagal ka norite rusiuoti duomenis? (0-varda, 1-pavarde, 2-galutini bala)" << endl;
             cin >> x;
-            cout << "Do you want to read data from txt file (0 - no, 1 - yes)?" << endl;
+            cout << "Ar norite nuskaityti duomenis is failo? (0 - ne, 1 - taip)" << endl;
 
             cin >> b;
             if (cin.fail() || (b != 0 && b != 1)) {
@@ -37,7 +32,7 @@ int main()
             }
 
             if (b == 1) {
-                cout << "Input file name" << endl;
+                cout << "Iveskite failo pavadinima" << endl;
                 cin >> failoVardas;
 
                 temp.input(failoVardas, vector1);
@@ -46,11 +41,11 @@ int main()
                     student.skaiciuotiGalutiniBala();
                 }
                 sortByChoice(vector1, x);
-                temp.output(vector1, a);
+                temp.output(vector1);
             }
 
             else if (b == 0) {
-                cout << "How many students do you have?" << endl;
+                cout << "Kiek studentu vesite?" << endl;
 
                 cin >> g;
                 if (cin.fail()) {
@@ -58,7 +53,7 @@ int main()
                 }
 
                 for (int i = 0; i < g; i++) {
-                    cout << "Please input student data:" << endl;
+                    cout << "Iveskite studentu duomenis:" << endl;
                     temp.input();
                     temp.skaiciuotiGalutiniBala();
                     vector1.push_back(temp);
@@ -66,7 +61,7 @@ int main()
                 }
 
                 sortByChoice(vector1, x);
-                temp.output(vector1, a);
+                temp.output(vector1);
             }
         }
         catch (exception& e) {
