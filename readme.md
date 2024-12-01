@@ -25,6 +25,24 @@ Naudokite terminalą ir CMake.
    ```
    cmake --build . --config Release 
    ```
+# **V1.5**
+1. main.cpp yra main failas.
+2. MyLib3.h faile aprašytos bibliotekos.
+3. Stud3.cpp faile surašytos visos funkcijos, realizuoti įvedimo/išvedimo operatoriai
+4. Zmogus.h faile aprašyta bazinė klasė
+5. Stud3.h faile aprašyta išvestinė (derived) klasė, jos konstruktoriai, funkcijų deklaracijos ir pnš.
+7. Failu_kurimas.cpp faile yra failų generavimo ir duomenų nuskaitymo, išvedimo į failus funkcijos.
+8. RandInt.h aprašoma atsitiktinių skaičių generavimo klasė.
+9. Timer.h laiko skaičiavimo klasė.
+10. CmakeLists.txt
+11. run.bat paleidimo failas.
+
+**kas naujo?**
+--------------
+* Sukurta abstrakti bazinė klasė `Zmogus` su *protected* kintamaisiais: vardas, pavardė.
+* `Stud` klasė tapo išvestine `Zmogus` klase.
+
+<img src="https://github.com/user-attachments/assets/bbee44c2-2d20-4ae3-b15a-37cddfa38c91" alt="Description" width="600"/>
 
 # **V1.2**
 ---------------------------------------------
