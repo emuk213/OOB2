@@ -37,7 +37,7 @@ Naudokite terminalą ir CMake.
 10. CmakeLists.txt
 11. run.bat paleidimo failas.
 
-**kas naujo?**
+**Kas naujo?**
 --------------
 * Sukurta abstrakti bazinė klasė `Zmogus` su *protected* kintamaisiais: vardas, pavardė.
 * `Stud` klasė tapo išvestine `Zmogus` klase.
