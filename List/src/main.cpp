@@ -12,6 +12,8 @@ int main()
     int b, c, f, g, h, x, demo;
     string failoVardas;
 
+    //Zmogus zmgs;
+
     cout << "Demo? (1-yes, 0-no)" << endl;
     cin >> demo;
     temp.demo(demo);
