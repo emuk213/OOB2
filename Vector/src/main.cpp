@@ -12,11 +12,13 @@ int main()
     int b, c, f, g, h, x, demo;
     string failoVardas;
 
+    //Zmogus zmgs;
+
     cout << "Demo? (1-yes, 0-no)" << endl;
     cin >> demo;
     temp.demo(demo);
     system("pause");
-    
+
 
     cout << "Ar norite atlikti testus arba generuoti naujus failus (0-ne, 1-taip)?" << endl;
     cin >> h;
@@ -46,7 +48,6 @@ int main()
 
             else if (b == 0) {
                 cout << "Kiek studentu vesite?" << endl;
-
                 cin >> g;
                 if (cin.fail()) {
                     throw runtime_error("Error: input must be a number");
