@@ -1,35 +1,26 @@
 #ifndef STUD_H_INCLUDED
 #define STUD_H_INCLUDED
 #include "MyLib3.h"
+#include "Zmogus.h"
 
-class Stud {
+class Stud : public Zmogus {
 private:
-	string vardas_, pavarde_;
 	vector <int> nd_;
 	int egz_;
 	double galutinisVid_, galutinisMed_;
-	
+
 public:
-	//default constructor
-	Stud() : egz_(0), galutinisVid_(0), galutinisMed_(0), vardas_(""), pavarde_("") { }
-	
-	Stud(string vardas, string pavarde, vector<int> nd, int egz) : vardas_(vardas), pavarde_(pavarde), nd_(nd), egz_(egz), galutinisVid_(0), galutinisMed_(0) {}
+
+	Stud(string v = "", string p = "", vector<int> nd = {}, int egz = 0) : Zmogus(v, p), nd_(nd), egz_(egz), galutinisVid_(0), galutinisMed_(0) {}
+
 
 	//1.copy constructor
-	Stud(const Stud& c) {
-		vardas_ = c.vardas_;
-		pavarde_ = c.pavarde_;
-		nd_ = c.nd_;
-		egz_ = c.egz_;
-		galutinisVid_ = c.galutinisVid_;
-		galutinisMed_ = c.galutinisMed_;
-	}
+	Stud(const Stud& c) : Zmogus(c), nd_(c.nd_), egz_(c.egz_), galutinisVid_(c.galutinisVid_), galutinisMed_(c.galutinisMed_) {};
 
 	//2.copy assignment operator
 	Stud& operator=(const Stud& op) {
 		if (this != &op) { 
-			vardas_ = op.vardas_;
-			pavarde_ = op.pavarde_;
+			Zmogus::operator=(op);
 			nd_ = op.nd_;
 			egz_ = op.egz_;
 			galutinisVid_ = op.galutinisVid_;
@@ -41,18 +32,15 @@ public:
 	~Stud() { nd_.clear(); }
 
 	//getters:
-	inline string vardas() const { return vardas_; }
-	inline string pavarde() const { return pavarde_; }
-	inline double galutinisVid() const { return galutinisVid_; }
-	inline double galutinisMed() const { return galutinisMed_; }
-	vector<int> nd() const { return nd_; }
-	int egz() const { return egz_; }
-	
+	inline double getGalutinisVid() const { return galutinisVid_; }
+	inline double getGalutinisMed() const { return galutinisMed_; }
+	vector<int> getNd() const { return nd_; }
+	int getEgz() const { return egz_; }
+
 	//setters:
-	void setVardas(const string& vardas) {vardas_ = vardas;}
-	void setPavarde(const string& pavarde) {pavarde_ = pavarde;}
-	void setNd(const vector<int>& nd) {nd_ = nd;}
-	void setEgz(int egz) {egz_ = egz;}
+
+	void setNd(const vector<int>& nd) { nd_ = nd; }
+	void setEgz(int egz) { egz_ = egz; }
 
 	//input/output operators:
 	friend istream& operator>>(istream& is, Stud& student);
@@ -70,6 +58,7 @@ public:
 	void clean();
 
 	void demo(int demo);
+	void kasAs() const { cout << "As esu studentas" << endl; }
 };
 
 static double skaiciuotiNdVid(const vector <int>& nd);
