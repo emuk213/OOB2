@@ -35,19 +35,19 @@ void Stud::skaiciuotiGalutiniBala() {
 
 void kategorijos3(list<Stud>& list1, list<Stud>& beta) {
     auto partitionPoint = partition(list1.begin(), list1.end(), [](const Stud& s) {
-        return s.galutinisVid() >= 5;
+        return s.getGalutinisVid() >= 5;
         });
     beta.splice(beta.end(), list1, partitionPoint, list1.end());
 }
 
 bool lygintiVardas(const Stud& a, const Stud& b) {
-    return a.vardas() < b.vardas();
+    return a.getVardas() < b.getVardas();
 }
 bool lygintiPavarde(const Stud& a, const Stud& b) {
-    return a.pavarde() < b.pavarde();
+    return a.getPavarde() < b.getPavarde();
 }
 bool lygintiGalutinis(const Stud& a, const Stud& b) {
-    return a.galutinisVid() < b.galutinisVid();
+    return a.getGalutinisVid() < b.getGalutinisVid();
 }
 void sortByChoice(list<Stud>& vec, int b) {
     if (b == 0) {
@@ -66,7 +66,7 @@ void Stud::input() {
     constexpr int max = 10;
     RandInt rnd{ 1, max };
     cout << "Input Name, Surname:" << endl;
-    cin >> vardas_ >> pavarde_;
+    cin >> vardas >> pavarde;
 
     cout << "Do you want randomized ND and Exam scores (0 - no, 1 - yes)?" << endl;
     int ats;
@@ -88,7 +88,7 @@ void Stud::input() {
                 }
             }
 
-            cin.clear(); //isvalo klaidos busena
+            cin.clear();
             cin.ignore(numeric_limits<streamsize>::max(), '\n');
 
             cout << "Input Exam score: ";
@@ -161,15 +161,15 @@ istream& operator>>(istream& is, Stud& student) {
 
 ostream& operator<<(ostream& out, const Stud& student) {
     
-    out << setw(15) << left << student.vardas_ << setw(15) << left << student.pavarde_ << setw(5) << right << student.galutinisVid_;
+    out << setw(15) << left << student.vardas << setw(15) << left << student.pavarde << setw(5) << right << student.galutinisVid_;
 
     return out;
 }
 
 
 void Stud::clean() {
-    vardas_.clear();
-    pavarde_.clear();
+    vardas.clear();
+    pavarde.clear();
     nd_.clear();
 }
 
