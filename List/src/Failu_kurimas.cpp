@@ -36,7 +36,7 @@ void Stud::input(const string& failas, int eil) {
 
 //is failo
 void Stud::input(const string& failoVardas, list<Stud>& studentai) {
-    ifstream inFile(failoVardas); //atidarome faila nuskaitymui
+    ifstream inFile(failoVardas);
     try {
         if (!inFile.is_open()) {
             throw runtime_error("Error: unable to open file: " + failoVardas);
