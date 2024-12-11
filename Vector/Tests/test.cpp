@@ -35,6 +35,14 @@ TEST(StudTest, Setters) {
     student.setEgz(5);
     student.setNd({ 3, 4, 10, 8 });
 }
+TEST(StudTest, CopyConstructor) {
+    Stud obj1("Jon", "Lok", { 9, 8, 10 }, 2);
+    Stud obj2 = obj1;
+    EXPECT_EQ(obj2.getVardas(), "Jon");
+    EXPECT_EQ(obj2.getPavarde(), "Lok");
+    EXPECT_EQ(obj2.getEgz(), 2);
+    EXPECT_EQ(obj2.getGalutinisVid(), 0);
+}
 
 int main(int argc, char** argv) {
     ::testing::InitGoogleTest(&argc, argv);
