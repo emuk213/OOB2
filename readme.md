@@ -25,6 +25,26 @@ Naudokite terminalą ir CMake.
    ```
    cmake --build . --config Release 
    ```
+# **V2.0**
+1. main.cpp yra main failas.
+2. MyLib3.h faile aprašytos bibliotekos.
+3. Stud3.cpp faile surašytos visos funkcijos, realizuoti įvedimo/išvedimo operatoriai
+4. Zmogus.h faile aprašyta bazinė klasė
+5. Stud3.h faile aprašyta išvestinė (derived) klasė, jos konstruktoriai, funkcijų deklaracijos ir pnš.
+7. Failu_kurimas.cpp faile yra failų generavimo ir duomenų nuskaitymo, išvedimo į failus funkcijos.
+8. RandInt.h aprašoma atsitiktinių skaičių generavimo klasė.
+9. Timer.h laiko skaičiavimo klasė.
+10. CmakeLists.txt
+11. run.bat paleidimo failas.
+12. test.cpp faile surašyti testai.
+
+**Kas naujo?**
+---------------
+* Sukurta projekto `Doxygen` dokumentacija.
+* Sukurti `Unit Test`'ai, kurie testuoja Stud klasės konstruktorių, kopijavimo konstruktorių, *setter*'ius ir *output* operatorių. Naudojamas `GoogleTest` *framework*'as.
+* *run.bat* failas sukompiliuoja kodą, sukuriamas ir *Vector.exe*, ir *ProjektasTest.exe*. Automatiškai paleidžiamas testų *exe*.
+
+  
 # **V1.5**
 1. main.cpp yra main failas.
 2. MyLib3.h faile aprašytos bibliotekos.
