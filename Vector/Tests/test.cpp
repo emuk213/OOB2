@@ -1,13 +1,8 @@
 #include "gtest/gtest.h"
-#include "../Stud3.h"
-#include "../Stud3.cpp"
+#include "../include/Stud3.h"
+#include "../src/Stud3.cpp"
 
 
-
-TEST(TestCaseName, TestName) {
-  EXPECT_EQ(1, 1);
-  EXPECT_TRUE(true);
-}
 TEST(StudTest, Constructor) {
     Stud student;
     EXPECT_EQ(student.getVardas(), "");
