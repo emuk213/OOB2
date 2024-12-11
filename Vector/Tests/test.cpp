@@ -1,4 +1,4 @@
-#include "pch.h"
+#include "gtest/gtest.h"
 #include "../Stud3.h"
 #include "../Stud3.cpp"
 
