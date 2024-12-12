@@ -36,11 +36,13 @@ Naudokite terminalą ir CMake.
 9. Timer.h laiko skaičiavimo klasė.
 10. CmakeLists.txt
 11. run.bat paleidimo failas.
-12. test.cpp faile surašyti testai.
+12. test.cpp faile surašyti testai ir jų main funkcija.
+13. html aplankas yra projekto html dokumentacija.
+14. v2_0.pdf projekto dokumentacija pdf formatu.
 
 **Kas naujo?**
 ---------------
-* Sukurta projekto `Doxygen` dokumentacija.
+* Sukurta projekto `Doxygen` dokumentacija html ir pdf formatais.
 * Sukurti `Unit Test`'ai, kurie testuoja Stud klasės konstruktorių, kopijavimo konstruktorių, *setter*'ius ir *output* operatorių. Naudojamas `GoogleTest` *framework*'as.
 * *run.bat* failas sukompiliuoja kodą, sukuriamas ir *Vector.exe*, ir *ProjektasTest.exe*. Automatiškai paleidžiamas testų *exe*.
 
