@@ -25,6 +25,29 @@ Naudokite terminalą ir CMake.
    ```
    cmake --build . --config Release 
    ```
+# **V3.0**
+Sukurtas App set up.
+parsisiuntus ZIP išplėsti aplanką. Paspausti setup, programa bus instaliuota į "Program Files (x86)" VilniusUniversity aplanke. Reikia tiesiog paleisti programos exe.
+# **V2.0**
+1. main.cpp yra main failas.
+2. MyLib3.h faile aprašytos bibliotekos.
+3. Stud3.cpp faile surašytos visos funkcijos, realizuoti įvedimo/išvedimo operatoriai
+4. Zmogus.h faile aprašyta bazinė klasė
+5. Stud3.h faile aprašyta išvestinė (derived) klasė, jos konstruktoriai, funkcijų deklaracijos ir pnš.
+7. Failu_kurimas.cpp faile yra failų generavimo ir duomenų nuskaitymo, išvedimo į failus funkcijos.
+8. RandInt.h aprašoma atsitiktinių skaičių generavimo klasė.
+9. Timer.h laiko skaičiavimo klasė.
+10. CmakeLists.txt
+11. run.bat paleidimo failas.
+12. test.cpp faile surašyti testai ir jų main funkcija.
+13. html aplankas yra projekto html dokumentacija.
+14. v2_0.pdf projekto dokumentacija pdf formatu.
+
+**Kas naujo?**
+---------------
+* Sukurta projekto `Doxygen` dokumentacija html ir pdf formatais.
+* Sukurti `Unit Test`'ai, kurie testuoja Stud klasės konstruktorių, kopijavimo konstruktorių, *setter*'ius ir *output* operatorių. Naudojamas `GoogleTest` *framework*'as.
+* *run.bat* failas sukompiliuoja kodą, sukuriamas ir *Vector.exe*, ir *ProjektasTest.exe*. Automatiškai paleidžiamas testų *exe*.
 # **V1.5**
 1. main.cpp yra main failas.
 2. MyLib3.h faile aprašytos bibliotekos.
