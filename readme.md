@@ -26,8 +26,9 @@ Naudokite terminalą ir CMake.
    cmake --build . --config Release 
    ```
 # **V3.0**
-Sukurtas App set up.
-parsisiuntus ZIP išplėsti aplanką. Paspausti setup, programa bus instaliuota į "Program Files (x86)" VilniusUniversity aplanke. Reikia tiesiog paleisti programos exe.
+Sukurtas App Set up.
+
+Parsisiuntus ZIP, išplėsti aplanką. Paspausti setup, programa bus instaliuota į "Program Files (x86)" VilniusUniversity aplanke. Reikia tiesiog paleisti programos *exe*.
 # **V2.0**
 1. main.cpp yra main failas.
 2. MyLib3.h faile aprašytos bibliotekos.
